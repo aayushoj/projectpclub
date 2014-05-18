@@ -1,0 +1,54 @@
+#logo {
+    padding:10px;
+    margin:10px 100px;
+    display:inline-block;
+    float: left;
+}
+#animation {
+    text-align: center;
+    display:inline-block;
+    margin:10px 100px;
+    height:150px;
+    width:400px;
+    background-color:green;
+    float: left;
+}
+#top{
+    height:200px;
+}
+.menu{
+/*    position:fixed;*/
+    padding:5px 20px;
+    height:50px;
+    margin:10px 50px;
+    background-color: yellow;
+    display:block;
+/*    float:left;
+*/
+}
+.menu li{
+    font-size: 30px;
+    margin:5px;
+    font-family: Garamond,serif;
+    display: inline;
+}
+.menu li a{
+    text-decoration: none;
+}
+.menu li a:hover{
+    color: red;
+}
+.container {
+    height:1000px;
+    width: 900px;
+    display:block;
+    clear: both;
+}
+#left_col{
+    display:inline-block;
+/*    position: fixed;*/
+    background-color:#FAEBD7 ;
+    margin: 10px;
+    padding: 50px 10px;
+/*    clear: both;*/
+}
