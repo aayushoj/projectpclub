@@ -1,3 +1,8 @@
+#top{
+    height:170px;
+    margin:0px 20px;
+    border:1px blue dashed;
+}
 #logo {
     padding:10px;
     margin:10px 100px;
@@ -13,39 +18,49 @@
     background-color:green;
     float: left;
 }
-#top{
-    height:200px;
-}
+
 .menu{
 /*    position:fixed;*/
-    padding:5px 20px;
-    height:50px;
+/*    border:1px blue dashed;*/
+    height:60px;
     margin:10px 50px;
     background-color: yellow;
     display:block;
 /*    float:left;
 */
 }
+
+#menu_div{
+/*    border:2px blue dashed;*/
+    margin:10px;
+/*    margin-bottom:20px;*/
+}
 .menu li{
     font-size: 30px;
-    margin:5px;
+    margin:8px;
     font-family: Garamond,serif;
     display: inline;
 }
+
 .menu li a{
     text-decoration: none;
 }
+
 .menu li a:hover{
     color: red;
 }
+
+
 .container {
-    height:1000px;
-    width: 900px;
-    display:block;
+/*    border:1px blue dashed;*/
+    height:500px;
+    width: 300px;
+/*    display:block;*/
     clear: both;
 }
 #left_col{
-    display:inline-block;
+/*    border:1px blue dashed;*/
+/*    display:inline-block;*/
 /*    position: fixed;*/
     background-color:#FAEBD7 ;
     margin: 10px;
