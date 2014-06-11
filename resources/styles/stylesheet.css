@@ -1,0 +1,155 @@
+#top{
+    height:170px;
+    margin:20px 20px;
+/*    border:1px blue dashed;*/
+}
+
+#logo {
+    padding:10px;
+    margin:10px 100px;
+    display:inline-block;
+    float: left;
+}
+
+#animation {
+    text-align: center;
+    display:inline-block;
+    margin:10px 100px;
+    height:150px;
+    width:400px;
+/*    background-color:green;*/
+    float: left;
+}
+
+/*.menu{
+/*    position:fixed;*/
+/*    border:1px blue dashed;*/
+/*    height:30px;*/
+ /*   margin:10px 50px;
+    padding:10px;
+    background-color: yellow;
+    display:block;*/
+/*    float:left;*/
+}
+
+#menu_div{
+/*    border:2px blue dashed;*/
+/*    margin-bottom:20px;*/
+}
+
+/*.menu li{
+    font-size: 30px;
+    margin:8px;
+    font-family: Garamond,serif;
+    display: inline;
+}*/
+/*.menu{
+    width : 90%;
+}
+*/
+
+.ui.center.aligned.segment{
+    width:80%;
+}
+
+
+.menu a{
+    color:blue;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: red;
+}
+
+
+.container {
+/*    border:1px blue dashed;*/
+    height:auto;
+    width: 1300px;
+    height:1700px;
+/*    display:block;*/
+    clear: both;
+}
+
+#left_col{
+/*    border:1px blue dashed;*/
+    display:inline-block;
+    float:left;
+/*    position: fixed;*/
+    background-color:#FAEBD7 ;
+    width: 300px;
+    margin: 10px;
+    padding: 50px 10px;
+/*    clear: both;*/
+}
+#twitter{
+    float: left;
+    margin: 20px;    
+}
+#right_container{
+    float:right;
+    background-color:#ddd;
+    width:600px;
+/*    border:1px blue dashed;*/
+    padding: 10px 50px;
+    margin:10px 50px;
+}
+#footer{
+/*    border:1px blue dashed;*/
+    clear:both;
+    margin:10px 50px;
+    height:50px;
+    background-color:#eee;
+    padding:10px;
+}
+
+#rights{
+    text-align: center;
+}
+
+/*.ui.celled.grid {
+    border:none;
+}*/
+
+
+/*for login and sign up page*/
+/*start*/
+.pad a
+{
+    padding-left: 10px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.main_heading
+{
+    text-align: center;
+}
+.username
+{
+    float:right;
+    display:block;
+    margin-top:40px;
+    
+}
+.small
+{
+    margin-top: 1em;
+    width:20rem;
+}
+.log
+{
+    width:45em;
+    margin-top:8em;
+    margin-left: 25em;
+}
+#table_head th{
+    color:#99FF00;
+}
+
+.table a{
+    text-decoration: none;
+    color: #FFFF99;
+}
+
+/*end*/
