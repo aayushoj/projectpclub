@@ -4,7 +4,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/styles/stylesheet.css">
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/packaged/css/semantic.css">
     <title>
-        |Eat|Sleep|Code Programming Club IIT Kanpur
+        Eat|Sleep|Code Programming Club IIT Kanpur
     </title>
     <style>
 .main_page img

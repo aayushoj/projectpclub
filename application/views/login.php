@@ -13,7 +13,7 @@
             <?php echo validation_errors(); ?>
             <div class="field">
               <div class="ui left labeled icon input" style="margin:20px 0px 10px 0px">
-                <input name="email" type="text" placeholder="Username">
+                <input name="username" type="text" placeholder="Username">
                 <i class="user icon"></i>
                 <div class="ui corner label">
                   <i class="asterisk icon"></i>

@@ -21,15 +21,15 @@
     float: left;
 }
 
-/*.menu{
-/*    position:fixed;*/
-/*    border:1px blue dashed;*/
-/*    height:30px;*/
- /*   margin:10px 50px;
+.menu{
+    margin:20px 10px 10px 40px;
+/*    position:fixed;
+    border:1px blue dashed;
+    height:30px;
     padding:10px;
     background-color: yellow;
-    display:block;*/
-/*    float:left;*/
+    display:block;
+    float:left;*/
 }
 
 #menu_div{

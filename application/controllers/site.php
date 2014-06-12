@@ -51,16 +51,16 @@ class Site extends CI_Controller {
 		$this->load->view("footer.php");		
 	}
 
-	public function team(){
-		$data['active']="6";
-		$data['title']='Team';
-		$this->load->view("top_head.php",$data);
-		$this->load->view("content_team.php");
-		$this->load->view("footer.php");		
-	}
+	// public function team(){
+	// 	$data['active']="6";
+	// 	$data['title']='Team';
+	// 	$this->load->view("top_head.php",$data);
+	// 	$this->load->view("content_team.php");
+	// 	$this->load->view("footer.php");		
+	// }
 
 	public function about(){
-		$data['active']="7";
+		$data['active']="6";
 		$data['title']='About';
 		$this->load->view("top_head.php",$data);
 		$this->load->view("content_about.php");
@@ -89,13 +89,21 @@ class Site extends CI_Controller {
 	public function login_validation(){
 
 		$this->load->library("form_validation");
-		$this->form_validation->set_rules('email','Email','required|trim|xss_clean|callback_validate_credentials');
+		$this->form_validation->set_rules('username','Username','required|trim|xss_clean|callback_validate_credentials');
 		$this->form_validation->set_rules('password','Password','required|md5|trim');
 		if ($this->form_validation->run()){
 			$data = array(
-				'email' => $this->input->post('email'),
-				'is_logged_in' => 1
+				'username' => $this->input->post('username'),
+				'is_logged_in' => 1,
+				'admin'=>0
 			);
+			$this->load->model('model_users');
+			if($this->model_users->is_admin()){
+				$data['admin']=1;
+			}
+			else{
+				$data['admin']=0;
+			}
 			$this->session->set_userdata($data);
 			redirect('site/members');
 
@@ -134,6 +142,7 @@ class Site extends CI_Controller {
 
 	public function signup_validation(){
 		$this->load->library("form_validation");
+		$this->form_validation->set_rules('username','Username','required|trim|is_unique[users.username]');
 		$this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password','Password','required|trim');
 		$this->form_validation->set_rules('cppassword','Confirm Password','required|trim|matches[password]');
@@ -185,9 +194,9 @@ class Site extends CI_Controller {
 		$this->load->model('model_users');
 
 		if ( $this->model_users->is_key_valid($key)){
-			if($newemail = $this->model_users->add_user($key)){
+			if($user = $this->model_users->add_user($key)){
 				$data = array(
-					'email' => $newemail,
+					'username' => $user,
 					'is_logged_in' =>1
 				);
 
@@ -201,7 +210,38 @@ class Site extends CI_Controller {
 		}
 
 	}
+	public function admin_panel(){
+		$data['active']="7";
+		$data['title']='Admin';
+		$data['add_event']='';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("content_admin.php");		
+		$this->load->view("footer.php");
+	}
 
+	public function add_event(){
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules('name','Heading','required|trim');
+		$this->form_validation->set_rules('venue','Venue and timing','required|trim');
+		$this->form_validation->set_rules('date','Date','required|trim');
+		$this->form_validation->set_rules('time','Time','required|trim');
+		if($this->form_validation->run()){
+			$this->load->model('event');
+			if($this->event->add_event()){
+				$data['add_event']=true;
+			}
+			else{
+				$data['add_event']=false;
+			}
+		}
+		$data['active']="7";
+		$data['title']='Admin';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("content_admin.php");
+		$this->load->view("footer.php");
+
+
+	}
 
 
 }

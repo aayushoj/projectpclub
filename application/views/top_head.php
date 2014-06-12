@@ -2,19 +2,17 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/styles/stylesheet.css">
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/packaged/css/semantic.css">
     <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/script.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/jssor.slider.mini.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/packaged/css/semantic.css">
+    <script type="text/javascript" src="<?php echo base_url(); ?>resources/packaged/javascript/semantic.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/jquery.js"></script>
     <title>
-        <?php echo $title; ?> |Eat|Sleep|Code Programming Club IIT Kanpur
+        <?php echo $title; ?>
     </title>
 </head>
 <body background="<?php echo base_url(); ?>resources/images/seamless-white-texture.jpg"  bgproperties="fixed">
-    <div id="top">
-        <div id="logo">
-            <a href="site/home"><img src="<?php echo base_url(); ?>resources/images/logo.png"></a>
-        </div>
+<!--     <div id="top">
+
         
         <div id="animation">
             <script>
@@ -31,13 +29,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <div class="ui divided grid">
         <div class="row">
-            <div class="ten wide column">
+            <div class="one wide column">
+                    <a href="site/home"><img src="<?php echo base_url(); ?>resources/images/logo.png"></a>
+            </div>
+            <div class="eight wide column" >
                 <nav class="menu">
-                    <div class="ui purple large inverted menu">
+                    <div class="ui purple inverted menu" style="width:100%;">
                         <a class="<?php if($active=='1') echo"active ";?> item" href="<?php echo base_url(); ?>site/home"><i class="home icon"></i> Home</a>
 
                         <a class="<?php if($active=='2') echo"active ";?>item" href="<?php echo base_url(); ?>site/tutorial">Tutorials</a>
@@ -50,27 +51,36 @@
 
                         <a class="item" href="http://pclub.in/onj/" target="_blank">Online Judge</a>
 
-                        <a class="<?php if($active=='6') echo"active ";?>item" href="<?php echo base_url(); ?>site/team">Team</a>
-
-                        <a class="<?php if($active=='7') echo"active ";?>item" href="<?php echo base_url(); ?>site/about">About Us</a>
+                        <a class="<?php if($active=='6') echo"active ";?>item" href="<?php echo base_url(); ?>site/about">About Us</a>
 
                         <a class="<?php if($active=='8') echo"active ";?>item" >Calender</a>
+                        <?php 
+                            if($this->session->userdata('admin')){
+                                $a= "<a class='" ;
+                                $a .= $active=='7' ? "active " : "" ;
+                                $a .= "item' href='" . base_url() . "site/admin_panel'>Admin</a>";
+                                echo $a;
+                            }
+                        ?>
                     </div>
                 </nav>
             </div>
 
-            <div class="one wide column">
-                <a class="ui green button" href="<?php echo base_url(); ?>site/<?php 
-                    if ( $this->session->userdata('is_logged_in'))echo 'logout';
-                    else echo 'login' ;?> ">
-                 <?php 
-                    if ( $this->session->userdata('is_logged_in')){
-                        echo 'Logout';
-                    } else{
-                        echo 'Login' ;
+            <div class="three wide column">
+                <?php
+                    if ($this->session->userdata('is_logged_in')){
+                        echo "<div style=''>";
+                        echo "<a class='ui red button' href='" . base_url() . "site/account/" . $this->session->userdata('username') . "' style='margin:10px; font-size:15px; text-transform: lowercase; text-decoration:underline; '>" . $this->session->userdata('username') . "</a>";
+                        echo "<a class='ui green button' href='" . base_url() . "site/logout' style='font-size:15px; float:right; margin:10px 10px 0px 0px;'>" . "Logout" . "</a>";
+                        echo "</div>";
                     }
-                ?> </a>
-<!--                 <a class="ui green button" href="<?php echo base_url(); ?>site/login">Login </a> -->
+                    else{
+                        echo "<div style='margin: 10px 50px'>";
+                        echo "<a class='ui green button' href='" . base_url() . "site/login'>" . "Login" . "</a>";
+                        echo "</div>";
+                    }
+
+                 ?>
 
                         <!-- <div class="right menu">
                           <div class="item">
@@ -83,20 +93,4 @@
             </div>
         </div>
     </div>
-    <!-- <nav class="menu">
-        <div id="menu_div">
-        <ul>
-        <li><a href="<?php echo base_url(); ?>site/home">Home</a></li>
-        <li><a href="<?php echo base_url(); ?>site/tutorial">Tutorials</a></li>
-        <li><a href="<?php echo base_url(); ?>site/projects">Projects</a></li>
-        <li><a href="<?php echo base_url(); ?>site/blog">Blog</a></li>
-        <li><a href="<?php echo base_url(); ?>site/forum">Forum</a></li>
-        <li><a href="http://pclub.in/onj/" target="_blank">Online Judge</a></li>
-        <li><a href="<?php echo base_url(); ?>site/team">Team</a></li>
-        <li><a href="<?php echo base_url(); ?>site/about">About Us</a></li>
-        <li><a href="calender">Calender</a></li>
-        </ul>
-        </div>
-    </nav> -->
-    
     

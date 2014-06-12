@@ -45,13 +45,33 @@
 | the active record class
 */
 
+
+
+$active_group = "users";
+$active_record = TRUE;
+
+$db['users']['hostname'] = "localhost";
+$db['users']['username'] = "root";
+$db['users']['password'] = "shubh";
+$db['users']['database'] = "users";
+$db['users']['dbdriver'] = "mysql";
+$db['users']['dbprefix'] = "";
+$db['users']['pconnect'] = TRUE;
+$db['users']['db_debug'] = TRUE;
+$db['users']['cache_on'] = FALSE;
+$db['users']['cachedir'] = "";
+$db['users']['char_set'] = "utf8";
+$db['users']['dbcollat'] = "utf8_general_ci";
+$db['users']['autoinit'] = TRUE;
+$db['users']['stricton'] = FALSE;
+
 $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'pclub';
+$db['default']['password'] = 'shubh';
+$db['default']['database'] = 'pclub_data';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -63,7 +83,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

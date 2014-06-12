@@ -3,6 +3,7 @@
   {
     document.getElementById("signin_form").submit();
   }
+
 </script>
 <form id="signin_form" action="<?php echo base_url(); ?>site/signup_validation" method="post"> 
   <div class="log">
@@ -11,33 +12,64 @@
         <div class="ui teal inverted form segment" >
           <?php echo validation_errors(); ?>
           <div class="field"  >
-          	<div class="ui left labeled icon input"  style="margin:20px 0px 10px 0px">
-              <input type="text" name="email" placeholder="email-id">
+            <div class="ui left labeled icon input" style="margin:20px 0px 10px 0px">
+              <input type="text" name="username" placeholder="Username" >
               <i class="user icon"></i>
               <div class="ui corner label">
                 <i class="asterisk icon"></i>
               </div>
             </div>
-        </div>
-      <div class="field">
-        <div class="ui left labeled icon input">
-          <input type="password" name="password" placeholder="Password">
-          <i class="lock icon"></i>
-          <div class="ui corner label">
-            <i class="asterisk icon"></i>
           </div>
-        </div>
-      </div>
+          <div class="field"  >
+          	<div class="ui left labeled icon input"  >
+              <input type="text" name="email" placeholder="Email-id">
+              <i class="user icon"></i>
+              <div class="ui corner label">
+                <i class="asterisk icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled icon input">
+              <input type="password" name="password" placeholder="Password">
+              <i class="lock icon"></i>
+              <div class="ui corner label">
+                <i class="asterisk icon"></i>
+              </div>
+            </div>
+          </div>
 
-      <div class="field">
-        <div class="ui left labeled icon input">
-          <input type="password" name="cppassword" placeholder="Confirm Password">
-          <i class="lock icon"></i>
-          <div class="ui corner label">
-            <i class="asterisk icon"></i>
+          <div class="field">
+            <div class="ui left labeled icon input">
+              <input type="password" name="cppassword" placeholder="Confirm Password">
+              <i class="lock icon"></i>
+              <div class="ui corner label">
+                <i class="asterisk icon"></i>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+
+          <div class="ui selection dropdown">
+            <input type="hidden" name="security_ques">
+            <div class="default text">Security Question</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item" data-value="0">Place of birth</div>
+              <div class="item" data-value="1">Favourite Movie</div>
+              <div class="item" data-value="2">First Pet</div>
+              <div class="item" data-value="3">Favourite Dish</div>
+            </div>
+          </div>
+          <div class="field" style="margin:10px 0px">
+            <div class="ui left labeled icon input">
+              <input type="text" name="security_ans" placeholder="Security Ans">
+              <i class="user icon"></i>
+              <div class="ui corner label">
+                <i class="asterisk icon"></i>
+              </div>
+            </div>
+          </div>
+
 
       <div class="ui green submit button" onClick="submitform()">Sign-Up</div>
       <div class="ui horizontal divider" style="margin-top:5em; color:red;">
