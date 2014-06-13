@@ -2,10 +2,11 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/styles/stylesheet.css">
-    <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/script.js"></script>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>resources/packaged/css/semantic.css">
+    <script src="<?php echo base_url(); ?>resources/script/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>resources/packaged/javascript/semantic.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/script.js"></script>
+    
     <title>
         <?php echo $title; ?>
     </title>
@@ -38,7 +39,7 @@
             </div>
             <div class="eight wide column" >
                 <nav class="menu">
-                    <div class="ui purple inverted menu" style="width:100%;">
+                    <div class="ui purple inverted menu" >
                         <a class="<?php if($active=='1') echo"active ";?> item" href="<?php echo base_url(); ?>site/home"><i class="home icon"></i> Home</a>
 
                         <a class="<?php if($active=='2') echo"active ";?>item" href="<?php echo base_url(); ?>site/tutorial">Tutorials</a>
@@ -66,12 +67,18 @@
                 </nav>
             </div>
 
-            <div class="three wide column">
+            <div class="two wide column">
                 <?php
                     if ($this->session->userdata('is_logged_in')){
-                        echo "<div style=''>";
-                        echo "<a class='ui red button' href='" . base_url() . "site/account/" . $this->session->userdata('username') . "' style='margin:10px; font-size:15px; text-transform: lowercase; text-decoration:underline; '>" . $this->session->userdata('username') . "</a>";
-                        echo "<a class='ui green button' href='" . base_url() . "site/logout' style='font-size:15px; float:right; margin:10px 10px 0px 0px;'>" . "Logout" . "</a>";
+                        echo "<div style='margin:20px;'>";
+                                echo "<div class='ui red labeled icon top right pointing dropdown button'>";
+                                echo "<span class='text' style='text-transform: lowercase;'>". $this->session->userdata('username')  . "</span>";
+                                echo "<i class='settings icon'></i>";
+                                echo "<div class='menu'>";
+                                    echo "<div class='item'>" . " <a href='" . base_url() . "site/account/" . $this->session->userdata('username') . "'><i class='user icon'></i>Account</a></div>";
+                                    echo "<div class='item'>" . " <a href='" . base_url() . "site/logout' ><i class='off icon'></i>Logout</a></div>";
+                                echo "</div>";
+                            echo "</div>";
                         echo "</div>";
                     }
                     else{
@@ -83,7 +90,7 @@
                  ?>
 
                         <!-- <div class="right menu">
-                          <div class="item">
+                          <div class="item">          style='font-size:15px; float:right; margin:10px 10px 0px 0px;'     style='margin:10px; font-size:15px; text-transform: lowercase; text-decoration:underline; '
                             <div class="ui icon input">
                               <input type="text" placeholder="Search...">
                               <i class="search link icon"></i>

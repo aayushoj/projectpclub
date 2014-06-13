@@ -9,9 +9,11 @@ class Site extends CI_Controller {
 		
 	} 
 	public function home(){
+
 		$data['active']="1";
 		$data['title']='Home';
 		$this->load->view("top_head.php",$data);
+		// $this->load->view("accountpage.php");
 		$this->load->view("content_home.php");		
 		$this->load->view("footer.php");
 
@@ -189,6 +191,8 @@ class Site extends CI_Controller {
 		}
 	}
 
+
+
 	public function register_user($key){
 
 		$this->load->model('model_users');
@@ -234,6 +238,9 @@ class Site extends CI_Controller {
 				$data['add_event']=false;
 			}
 		}
+		else{
+			$data['add_event']='';
+		}
 		$data['active']="7";
 		$data['title']='Admin';
 		$this->load->view("top_head.php",$data);
@@ -243,6 +250,53 @@ class Site extends CI_Controller {
 
 	}
 
+	public function admin_panel_tutorial(){
+		$data['active']="7";
+		$data['title']='Admin';
+		$data['add_tutorial']='';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("content_admin_tut.php");		
+		$this->load->view("footer.php");
+	}
+
+	public function upload_file(){
+
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules('title','Title','required|trim');
+		$this->form_validation->set_rules('comment','Body','required|trim');
+		if($this->form_validation->run()){
+			$uploaddir = "C:/Setup/xampp/htdocs/website_new/file/";
+			$uploadfile = $uploaddir . basename($_FILES['file']['name']);
+			if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)){
+				$this->load->model("tutorial");
+				$this->tutorial->add_tutorial($_FILES['file']['name']);
+				$data['add_tutorial']=TRUE;
+			}
+			else
+			{
+				$data['add_tutorial']=FALSE;
+			}
+		}
+		else
+		{
+			$data['add_tutorial']='';
+
+		}
+		$data['active']="2";
+		$data['title']='Add Tutorial';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("content_admin_tut.php");		
+		$this->load->view("footer.php");
+	}
+
+	public function account($username){
+		$data['active']="10";
+		$data['title']='account_info';
+		$data['username']=$username;
+		$this->load->view("top_head.php",$data);
+		$this->load->view("accountpage.php",$data);
+		$this->load->view("footer.php");
+	}
 
 }
 

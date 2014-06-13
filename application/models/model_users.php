@@ -77,6 +77,48 @@
 			}
 		}
 
+		public function updatepersonalRecord($newdata) {
+     		$data = array(
+               'username' => $newdata['username'],
+               'name' => $newdata['name'],
+               'email' =>$newdata['email'],
+               'about_me'=>$newdata['about_me'],
+            );
+
+			$this->db->where('id', $newdata['id']);
+			$this->db->update('users', $data);
+		}
+
+
+		public function updateotheraccounts($newdata) {
+     		$data = array(
+               'codchef' => $newdata['codchef'],
+               'spoj' => $newdata['spoj'],
+               'topcoder' => $newdata['topcoder'],
+               'website'=>$newdata['website'],
+               
+            );
+
+			$this->db->where('id', $newdata['id']);
+			$this->db->update('users', $data);
+		}
+
+		public function updatepassword($input) {
+     		$data = array(
+               
+               'password' =>$input['password'],
+               'sequrity_ques' => $input['security_ques'],
+               'security_ans' => $input['security_ans'],
+            );
+
+			$this->db->where('id', $input['id']);
+			$verified=$this->db->where(md5('password'),$input['oldpassword']);
+			if($verified)
+			{
+			 	$this->db->update('users', $data);
+			}
+		}
+
 		public function is_admin(){
 			$this->db->where("username",$this->input->post('username'));
 			$this->db->where("admin",'1');

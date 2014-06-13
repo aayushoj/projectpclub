@@ -46,116 +46,137 @@
 			</div>
 		</div>
 		<div class="six wide column">
-			<div style="padding:20px" >
-				<p>Current</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Shivanshu Agrawal</li>
-		            <li>Ankush Sachdeva</li>
-		            <li>Praveen Dhinwa</li>
-		        </ul>
+			<div class="team" style="background-color: #7FFFD4; border-radius:20px;">
+				<div style="padding:20px" >
+					<p style="font-size:20px;">Current</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Proneet Verma</li>
+			            <li>Akshay Aggarwal</li>
+			            <li>Triveni Mahata</li>
+			            <li>Abhilash Kumar</li>
+			        </ul>
+			        <p><strong>PG Mentors</strong></p>
+			        <ul>
+			        </ul>
 
-		        <p><strong>PG Mentors</strong></p>
-		        <ul>
-		            <li>Vikraman Choudhary</li>
-		            <li>Vinkal Vishnoi</li>
-		        </ul>
+					<p style="font-size:20px;">2013-2014</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Shivanshu Agrawal</li>
+			            <li>Ankush Sachdeva</li>
+			            <li>Praveen Dhinwa</li>
+			        </ul>
 
-		    <!--     <p><strong>Secretaries</strong></p> -->
-		        <p>2012-2013</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Anshu Avinash</li>
-		            <li>Rabi Shankar Guha</li>
-		            <li>Mridul Verma</li>
-		        </ul>
-		        <p><strong>PG Mentors</strong></p>
-		        <ul>
-		            <li>Abhimanyu M A</li>
-		            <li>Rizwan Hudda</li>
-		        </ul>
+			        <p><strong>PG Mentors</strong></p>
+			        <ul>
+			            <li>Vikraman Choudhary</li>
+			            <li>Vinkal Vishnoi</li>
+			        </ul>
 
-
-		        <p>2011-2012</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Adarsh J</li>
-		            <li>Ankesh Kumar Singh</li>
-		            <li>Ankit Mahato</li>
-		        </ul>
-		        <p><strong>Secretaries</strong></p>
-		        <ul>
-		            <li>Vinit Kataria</li>
-		            <li>Mridul Verma</li>
-		            <li>Shikhar Sharma</li>
-		            <li>Rahul Arora</li>
-		            <li>Rohit Gupta</li>
-		            <li>Anshu Avinash</li>
-		            <li>Priyanshu Ranjit</li>
-		            <li>Ashita Prasad</li>
-		        </ul>
-
-		        <p>2010-2011&nbsp;</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Utkarsh Lath</li>
-		            <li>Shitikanth</li>
-		            <li>Rahul Varma</li>
-		        </ul>
-
-		        <p><strong>Secretaries</strong></p>
-		        <ul>
-		            <li>Shubham Tulsiani</li>
-		            <li>Pankaj More</li>
-		            <li>Atul Agrawal</li>
-		            <li>Ankit Mahato</li>
-		            <li>Ankesh Kumar Singh</li>
-		            <li>Deepa Sahchari</li>
-		            <li>Pratik Moona</li>
-		        </ul>
-
-		        <p>2009-2010</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Abhilash Jindal&nbsp;</li>
-		            <li>Diptarka Chakravarty&nbsp;</li>
-		        </ul>
-
-		        <p>2008-2009&nbsp;</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Ashish Kumar Agarwal&nbsp;</li>
-		        </ul>
-		        <p>&nbsp;</p>
+			    <!--     <p><strong>Secretaries</strong></p> -->
+			        <p style="font-size:20px;">2012-2013</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Anshu Avinash</li>
+			            <li>Rabi Shankar Guha</li>
+			            <li>Mridul Verma</li>
+			        </ul>
+			        <p><strong>PG Mentors</strong></p>
+			        <ul>
+			            <li>Abhimanyu M A</li>
+			            <li>Rizwan Hudda</li>
+			        </ul>
 
 
-		        <p>2007-2008&nbsp;</p>
-		        <p><strong>Coordinators</strong></p>
-		        <ul>
-		            <li>Ashish Bhatia</li>
-		            <li>Ashok Chhilar</li>
-		            <li>Kush Sharma</li>
-		        </ul><p>&nbsp;</p>
-		    </div>
+			        <p style="font-size:20px;">2011-2012</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Adarsh J</li>
+			            <li>Ankesh Kumar Singh</li>
+			            <li>Ankit Mahato</li>
+			        </ul>
+			        <p><strong>Secretaries</strong></p>
+			        <ul>
+			            <li>Vinit Kataria</li>
+			            <li>Mridul Verma</li>
+			            <li>Shikhar Sharma</li>
+			            <li>Rahul Arora</li>
+			            <li>Rohit Gupta</li>
+			            <li>Anshu Avinash</li>
+			            <li>Priyanshu Ranjit</li>
+			            <li>Ashita Prasad</li>
+			        </ul>
 
+			        <p style="font-size:20px;">2010-2011&nbsp;</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Utkarsh Lath</li>
+			            <li>Shitikanth</li>
+			            <li>Rahul Varma</li>
+			        </ul>
+
+			        <p><strong>Secretaries</strong></p>
+			        <ul>
+			            <li>Shubham Tulsiani</li>
+			            <li>Pankaj More</li>
+			            <li>Atul Agrawal</li>
+			            <li>Ankit Mahato</li>
+			            <li>Ankesh Kumar Singh</li>
+			            <li>Deepa Sahchari</li>
+			            <li>Pratik Moona</li>
+			        </ul>
+
+			        <p style="font-size:20px;">2009-2010</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Abhilash Jindal&nbsp;</li>
+			            <li>Diptarka Chakravarty&nbsp;</li>
+			        </ul>
+
+			        <p style="font-size:20px;">2008-2009&nbsp;</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Ashish Kumar Agarwal&nbsp;</li>
+			        </ul>
+			        <p>&nbsp;</p>
+
+
+			        <p style="font-size:20px;">2007-2008&nbsp;</p>
+			        <p><strong>Coordinators</strong></p>
+			        <ul>
+			            <li>Ashish Bhatia</li>
+			            <li>Ashok Chhilar</li>
+			            <li>Kush Sharma</li>
+			        </ul><p>&nbsp;</p>
+			    </div>
+			</div>
 		</div>
 		<div class="one wide column" style="margin:30px;">
-			<div class="ui small feed segment" style="background-color:#7FFFD4">
+			<div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;">
 			  	<h4 class="ui header">Announcements</h4>
 		  		<div class="event">
-				    <div class="content">
-				    	<h4>Programming Marathon</h4>
-					    <div class="summary">
-					        <p>Wednesday, January 22, 2014 - 19:00 to Sunday, January 26, 2014 - 20:00 <br>Lectures covering the breadth of Programming. Also introducing the Interest Groups</p>
-					    </div>
-				    </div>
-				</div>
-				<div class="event">
-				    <div class="content">
-				      <div class="summary">
-				      	Next announcement
-				      </div>
-				    </div>
+		  			<?php
+		  				$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+		  					or die('Error connecting to MYSQL server.');
+		  				$query=" SELECT * FROM events ORDER BY `date` DESC";
+		  				$query1="SELECT CURDATE()";
+		  				$result1=mysqli_query($dbc,$query1);
+		  				$result=mysqli_query($dbc,$query);
+		  				$row=mysqli_fetch_array($result1);
+		  				$date =  $row["CURDATE()"];
+		  				while($row=mysqli_fetch_array($result)){
+		  					if($row['date']>= $date){
+		  						echo"<h4 style='font-family:cursive;'>" . $row['name'] . "</h4>";
+			  					echo "<p>" . $row['venue'] ." ". $row['date'] . " " . $row['time'] . "</p>";
+			  					echo $row['about'];
+			  					echo"<br>";
+		  					}
+		  					else{
+		  						break;
+		  					}
+		  				}
+		  			?>
 				</div>
 			</div>
 		</div>

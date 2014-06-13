@@ -54,10 +54,10 @@
             <div class="default text">Security Question</div>
             <i class="dropdown icon"></i>
             <div class="menu">
-              <div class="item" data-value="0">Place of birth</div>
-              <div class="item" data-value="1">Favourite Movie</div>
-              <div class="item" data-value="2">First Pet</div>
-              <div class="item" data-value="3">Favourite Dish</div>
+              <div class="item" data-value="Place of birth">Place of birth</div>
+              <div class="item" data-value="Favourite Movie">Favourite Movie</div>
+              <div class="item" data-value="First Pet">First Pet</div>
+              <div class="item" data-value="Favourite Dish">Favourite Dish</div>
             </div>
           </div>
           <div class="field" style="margin:10px 0px">
