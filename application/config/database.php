@@ -47,23 +47,22 @@
 
 
 
-$active_group = "users";
 $active_record = TRUE;
 
-$db['users']['hostname'] = "localhost";
-$db['users']['username'] = "root";
-$db['users']['password'] = "shubh";
-$db['users']['database'] = "users";
-$db['users']['dbdriver'] = "mysql";
-$db['users']['dbprefix'] = "";
-$db['users']['pconnect'] = TRUE;
-$db['users']['db_debug'] = TRUE;
-$db['users']['cache_on'] = FALSE;
-$db['users']['cachedir'] = "";
-$db['users']['char_set'] = "utf8";
-$db['users']['dbcollat'] = "utf8_general_ci";
-$db['users']['autoinit'] = TRUE;
-$db['users']['stricton'] = FALSE;
+$db['forum']['hostname'] = "localhost";
+$db['forum']['username'] = "root";
+$db['forum']['password'] = "shubh";
+$db['forum']['database'] = "forum";
+$db['forum']['dbdriver'] = "mysql";
+$db['forum']['dbprefix'] = "";
+$db['forum']['pconnect'] = TRUE;
+$db['forum']['db_debug'] = TRUE;
+$db['forum']['cache_on'] = FALSE;
+$db['forum']['cachedir'] = "";
+$db['forum']['char_set'] = "utf8";
+$db['forum']['dbcollat'] = "utf8_general_ci";
+$db['forum']['autoinit'] = TRUE;
+$db['forum']['stricton'] = FALSE;
 
 $active_group = 'default';
 $active_record = TRUE;

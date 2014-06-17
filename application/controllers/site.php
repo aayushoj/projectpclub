@@ -13,6 +13,7 @@ class Site extends CI_Controller {
 		$data['active']="1";
 		$data['title']='Home';
 		$this->load->view("top_head.php",$data);
+
 		// $this->load->view("accountpage.php");
 		$this->load->view("content_home.php");		
 		$this->load->view("footer.php");
@@ -31,18 +32,19 @@ class Site extends CI_Controller {
 	public function projects(){
 		$data['active']="3";
 		$data['title']='Projects';
+		$data['add_project']='';
 		$this->load->view("top_head.php",$data);
 		$this->load->view("content_projects.php");		
 		$this->load->view("footer.php");		
 	}
 
-	public function blog(){
-		$data['active']="4";
-		$data['title']='Blog';
-		$this->load->view("top_head.php",$data);
-		$this->load->view("content_blog.php");
-		$this->load->view("footer.php");		
-	}
+	// public function blog(){
+	// 	$data['active']="4";
+	// 	$data['title']='Blog';
+	// 	$this->load->view("top_head.php",$data);
+	// 	$this->load->view("content_blog.php");
+	// 	$this->load->view("footer.php");		
+	// }
 
 
 	public function forum(){
@@ -203,7 +205,6 @@ class Site extends CI_Controller {
 					'username' => $user,
 					'is_logged_in' =>1
 				);
-
 				$this->session->set_userdata($data);
 				redirect('site/home');
 			} else {
@@ -214,14 +215,14 @@ class Site extends CI_Controller {
 		}
 
 	}
-	public function admin_panel(){
-		$data['active']="7";
-		$data['title']='Admin';
-		$data['add_event']='';
-		$this->load->view("top_head.php",$data);
-		$this->load->view("content_admin.php");		
-		$this->load->view("footer.php");
-	}
+	// public function admin_panel(){
+	// 	$data['active']="7";
+	// 	$data['title']='Admin';
+	// 	$data['add_event']='';
+	// 	$this->load->view("top_head.php",$data);
+	// 	$this->load->view("content_admin.php");		
+	// 	$this->load->view("footer.php");
+	// }
 
 	public function add_event(){
 		$this->load->library("form_validation");
@@ -258,6 +259,14 @@ class Site extends CI_Controller {
 		$this->load->view("content_admin_tut.php");		
 		$this->load->view("footer.php");
 	}
+	public function admin_panel_event(){
+		$data['active']="7";
+		$data['title']='Admin';
+		$data['add_event']='';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("content_admin_eve.php");		
+		$this->load->view("footer.php");
+	}
 
 	public function upload_file(){
 
@@ -265,16 +274,23 @@ class Site extends CI_Controller {
 		$this->form_validation->set_rules('title','Title','required|trim');
 		$this->form_validation->set_rules('comment','Body','required|trim');
 		if($this->form_validation->run()){
-			$uploaddir = "C:/Setup/xampp/htdocs/website_new/file/";
-			$uploadfile = $uploaddir . basename($_FILES['file']['name']);
-			if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)){
-				$this->load->model("tutorial");
-				$this->tutorial->add_tutorial($_FILES['file']['name']);
-				$data['add_tutorial']=TRUE;
+			if($_FILES['file']['tmp_name']){
+				$uploaddir = "C:/Setup/xampp/htdocs/website_new/file/";
+				$uploadfile = $uploaddir . basename($_FILES['file']['name']);
+				if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)){
+					$this->load->model("tutorial");
+					$this->tutorial->add_tutorial($_FILES['file']['name']);
+					$data['add_tutorial']=TRUE;
+				}
+				else
+				{
+					$data['add_tutorial']=FALSE;
+				}
 			}
-			else
-			{
-				$data['add_tutorial']=FALSE;
+			else{
+				$this->load->model("tutorial");
+				$this->tutorial->add_tutorial('');
+				$data['add_tutorial']=TRUE;
 			}
 		}
 		else
@@ -295,6 +311,85 @@ class Site extends CI_Controller {
 		$data['username']=$username;
 		$this->load->view("top_head.php",$data);
 		$this->load->view("accountpage.php",$data);
+		$this->load->view("footer.php");
+	}
+
+	public function updatedb($username)
+	{
+		$this->load->model('model_users');
+		$this->model_users->updatedb();
+		redirect('/site/account/'.$username);
+		
+	}
+
+	public function update_codechef_database(){
+		$this->load->model("codechef");
+		$this->codechef->get_rank();
+		redirect('site/admin_panel');
+	}
+
+	public function rm_admin($user){
+		$this->load->model("model_users");
+		$this->model_users->rm_admin($user);
+		redirect('site/account/'.$user);
+	}
+
+	public function add_admin($user){
+		$this->load->model("model_users");
+		$this->model_users->add_admin($user);
+		redirect('site/account/'.$user);
+	}
+
+	public function acc_deactivate($user){
+		$this->load->model("model_users");
+		$this->model_users->acc_deactivate($user);
+		redirect('site/account/'.$user);
+	}
+
+	public function acc_activate($user){
+		$this->load->model("model_users");
+		$this->model_users->acc_activate($user);
+		redirect('site/account/'.$user);
+	}
+
+	public function addpro()
+	{
+		$data['active']="3";
+		$data['title']='Add Tutorial';
+		$data['add_project']='';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("addpro.php");		
+		$this->load->view("footer.php");
+	}
+
+	public function pro_add()
+	{
+
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules('title','Title','required|trim');
+		//$this->form_validation->set_rules('comment','Body','required|trim');
+		if($this->form_validation->run()){
+			$uploaddir = "C:/Setup/xampp/htdocs/website_new/project/";
+			$uploadfile = $uploaddir . basename($_FILES['file']['name']);
+			if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)){
+				$this->load->model("project");
+				$this->project->add_project($_FILES['file']['name']);
+				$data['add_project']=true;
+			}
+			else
+			{
+				$data['add_project']=false;
+			}
+		}
+		else
+		{
+			$data['add_project']='';
+
+		}
+		$data['active']="3";
+		$data['title']='Add Project';
+		$this->load->view("top_head.php",$data);
+		$this->load->view("addpro.php");		
 		$this->load->view("footer.php");
 	}
 

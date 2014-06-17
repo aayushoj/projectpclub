@@ -3,7 +3,7 @@
 		public function add_tutorial($filename)
 		{
 			$data=array(
-				'title' => $this->input->post('title'),
+				'title' => htmlspecialchars($this->input->post('title')),
 				'body' =>  $this->input->post('comment'),
 				'filename' => $filename
 				);

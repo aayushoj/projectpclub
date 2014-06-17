@@ -21,7 +21,7 @@
 			  </tr></thead>
 			  <tbody>
 			    	<?php
-			    	for($i=1;$i<6;$i++){
+			    	for($i=1;$i<11;$i++){
 			    		echo "<tr>";
 				    	echo "<td>";
 					    echo $i;

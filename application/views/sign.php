@@ -1,10 +1,3 @@
-<script>
-  function submitform()
-  {
-    document.getElementById("signin_form").submit();
-  }
-
-</script>
 <form id="signin_form" action="<?php echo base_url(); ?>site/signup_validation" method="post"> 
   <div class="log">
   	<div class="ui two column middle aligned relaxed grid basic segment">
@@ -22,7 +15,7 @@
           </div>
           <div class="field"  >
           	<div class="ui left labeled icon input"  >
-              <input type="text" name="email" placeholder="Email-id">
+              <input type="text" name="email" placeholder="Email-id" onmousover="">
               <i class="user icon"></i>
               <div class="ui corner label">
                 <i class="asterisk icon"></i>
@@ -71,7 +64,7 @@
           </div>
 
 
-      <div class="ui green submit button" onClick="submitform()">Sign-Up</div>
+      <div class="ui green submit button" onClick="submit_signup()">Sign-Up</div>
       <div class="ui horizontal divider" style="margin-top:5em; color:red;">
       Or
     </div>
@@ -83,17 +76,11 @@
     </div>
     <form>
     </div>
-    <div class="ui vertical divider" >
-    	<div style="color:orange;">
-    	Or
-    </div>
-    </div>
+    
     <div class="center aligned column">
-      <a href="<?php echo base_url(); ?>site/login">
-      <div class="huge blue ui labeled icon button">
-        <i class="signup icon"></i>
-        Login
-      </div></a>
+
     </div>
   </div>
 </div>
+
+

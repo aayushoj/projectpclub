@@ -47,11 +47,51 @@
     width : 90%;
 }
 */
+/*.menu_ex a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
 
+.menu_ex div{
+    display:inline;
+    float:left;
+    height:20px;
+    width: auto;
+    margin: 0px 10px;
+    padding:10px;
+}
+
+.menu_ex div:hover{
+    background-color: #707070 ;
+}
+*/
+.menu_ex a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu_ex a div{
+    display:inline;
+    float:left;
+    height:20px;
+    width: auto;
+    margin: 0px 10px;
+    padding:10px;
+}
+
+.menu_ex a div:hover{
+    background-color: #707070 ;
+}
 .ui.center.aligned.segment{
     width:80%;
 }
 
+.active{
+    background-color: black;
+
+}
 
 .menu a{
     color:blue;
@@ -158,4 +198,26 @@
     font-size: 15px;
 }
 
+
+#login_button{
+    height:50px; 
+    width:100px;
+    background-color:#663399; 
+    border-radius:5px;
+    font-size:20px;
+    font-family:cursive;
+    color:white;
+}
+
+#signup_button{
+    height:50px; 
+    width:100px;
+    background-color:green; 
+    border-radius:5px;
+    font-size:20px;
+    font-family:cursive;
+    color:white;
+}
+
 /*end*/
+

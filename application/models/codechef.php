@@ -104,15 +104,15 @@ class Codechef extends CI_Model{
 
 
 		_curl($url,0);
-		for($i=20;$i<400;$i+=20){
+		for($i=20;$i<2000;$i+=20){
 			$r=$i/20;
 			$t=$url.'?page='.$r;
 			_curl($t,$i);
 		}
 		global $user;
 		$urlu='http://www.codechef.com/users/';
-		$co=0;
-		for($i=0;$i<400;$i++){
+		$co=1;
+		for($i=0;$i<2000;$i++){
 			global $user;
 			$t=$urlu.$user[$i];
 			$insti=name($t);
@@ -125,11 +125,33 @@ class Codechef extends CI_Model{
 						'username'=>$user[$i],
 						'rank'=>$ra[1]
 					);
-				$this->db->insert('codechef_top_rankers',$data);
+				$this->db->where('id',$co);
+				$this->db->update('codechef_top_rankers',$data);
 				++$co;
 			}
-			if($co==5)
+			if($co==11)
 				break;
 		}
 	}
 }
+		// $co=1;
+		// for($i=0;$i<2000;$i++){
+		// 	global $user;
+		// 	$t=$urlu.$user[$i];
+		// 	$insti=name($t);
+		// 	$ins='Indian Institute of Technology Kanpur ';
+		// 	if(strncmp($insti, $ins,37)== 0){
+		// 		echo $insti;
+		// 		$ra=top($t);
+		// 		echo $user[$i].' country rank ='.$ra[1]."<br>";
+		// 		$data = array(
+		// 				'username'=>$user[$i],
+		// 				'rank'=>$ra[1]
+		// 			);
+		// 		$this->db->where('id',$co);
+		// 		$this->db->update('codechef_top_rankers',$data);
+		// 		++$co;
+		// 	}
+		// 	if($co==11)
+		// 		break;
+		// }
