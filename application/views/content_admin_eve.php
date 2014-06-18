@@ -4,7 +4,7 @@
 	}
 ?>
 <script>
-  function submitform()
+  function submit_event()
   {
     document.getElementById("add_event").submit();
   }
@@ -55,7 +55,7 @@
 				<textarea name="comment"></textarea>
 			</div>
 		</div>
-	    <div class="ui purple submit button" onClick="submitform()"style="margin-left:300px;margin-top:30px;">Add Event</div>
+	    <div class="ui purple submit button" style="margin-left:300px;margin-top:30px;" onClick="submit_event()">Add Event</div>
 	</form>
 </div>
 

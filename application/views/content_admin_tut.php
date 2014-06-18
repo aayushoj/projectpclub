@@ -1,5 +1,5 @@
 <script>
-  function submitupload()
+  function submit_tutorial()
   {
     document.getElementById("uploadsubmit").submit();
   }
@@ -38,6 +38,6 @@
 	  <!--  <div id ="chouter" class="positive ui button" style="margin-left:800px;margin-top:30px; width:170px;" onclick="document.getElementById('fileID').click(); return false;"></div>-->
 
 	<input type="file" id="fileID" name="file"  style="margin-left:700px;margin-top:30px;"/> 
-	<div class="positive ui button" style="margin-left:700px;margin-top:0px;" onclick="submitupload()">UPLOAD</div>
+	<div class="positive ui button" style="margin-left:700px;margin-top:0px;" onclick="submit_tutorial()">UPLOAD</div>
 	</form>
 </div>

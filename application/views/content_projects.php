@@ -1,3 +1,21 @@
+<script>
+  var id1;
+  function deleteshubh_pro(a)
+   { 
+      id1=a;
+       $('#delete_pro').modal('show');
+   }
+    function deletepro()
+    {
+      $.post('../delpro.php',{ id :id1} );
+      setTimeout(function(){window.open("<?php echo base_url();?>site/projects","_self");},70);
+      
+    } 
+    function hidemodel_pro()
+    {
+       $('#delete_pro').modal('hide');
+    }
+</script>
 
 <div id="tutorial"style="margin-top:50px; margin-left:50px;">
 <?php
@@ -69,7 +87,7 @@ echo 'Add PROJECT';echo'</a>';
         
   
         while($row=mysqli_fetch_array($result)){
-          echo '<div class="ui message">';
+          echo '<div class="ui message" style="padding:30px;">';
         echo  '<div class="header">';
         echo  $row['title'] ;
         echo '</div>';
@@ -122,6 +140,9 @@ echo 'Add PROJECT';echo'</a>';
             echo "<br>";
           echo '</div>';
         }
+        if($this->session->userdata('username')==$row['username'] || $this->session->userdata('admin')){
+          echo '<i class="trash icon link" title="Delete." style="float:right;" onclick="deleteshubh_pro('.$row['id'].');"></i>';
+        }
         echo '</div>';
       }
         ?>
@@ -159,4 +180,19 @@ echo 'Add PROJECT';echo'</a>';
       </div>
     </div>
   </div>
+</div>
+
+
+
+<div class="ui basic modal" id="delete_pro">
+  <i class="massive trash icon" style="margin-left:200px;float:left;"></i>
+  <p style="font-family:cursive;margin-left:400px;">Do you want to delete this tutorial ?</p>
+  <br><br><br><br><br>
+  <form action='site/home_tab' method='post'>
+  <div class="ui buttons" style="margin-left:400px;float:left;">
+  <div class="ui positive button" id="yes" onClick="deletepro()">Yes</div>
+  <div class="or"></div>
+  <div class="ui button" id="no" onClick="hidemodel_pro()">No</div>
+</div>
+</form>
 </div>

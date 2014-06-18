@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<div class="six wide column">
-			<div class="team" style="background-color: #7FFFD4; border-radius:20px;">
+			<div class="team" style="background-color:rgba(0,0,0,0.71) ; border-radius:20px;opacity:1.0;">
 				<div style="padding:20px" >
 					<p style="font-size:20px;">Current</p>
 			        <p><strong>Coordinators</strong></p>
@@ -153,7 +153,7 @@
 			</div>
 		</div>
 		<div class="one wide column" style="margin:30px;">
-			<div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;">
+			<div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;opacity:0.6;">
 			  	<h4 class="ui header">Announcements</h4>
 		  		<div class="event">
 		  			<?php

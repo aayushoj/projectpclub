@@ -198,7 +198,9 @@
     font-size: 15px;
 }
 
-
+.team li{
+    color: white;
+}
 #login_button{
     height:50px; 
     width:100px;
@@ -217,6 +219,10 @@
     font-size:20px;
     font-family:cursive;
     color:white;
+}
+
+#admin_menu div:hover{
+    background-color:#C8C8C8 ;
 }
 
 /*end*/

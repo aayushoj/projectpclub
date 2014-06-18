@@ -9,9 +9,20 @@ if ( $this->session->userdata('admin'))
 }
 ?>
 <script>
-  function submitform()
+  var id;
+  function deleteshubh(a)
+   { 
+      id=a;
+       $('.basic.modal').modal('show');
+   }
+  function deletetut(){
+    $.post('../deltut.php',{ id :id} );
+    setTimeout(function(){window.open("<?php echo base_url();?>site/tutorial","_self");},100);
+    
+  } 
+  function hidemodel()
   {
-    document.getElementById("tutorial").submit();
+     $('.basic.modal').modal('hide');
   }
 </script>
 
@@ -83,6 +94,10 @@ if ( $this->session->userdata('admin'))
           echo '<a href="'.base_url().'file/'.rawurlencode($row['filename']).'" target="_blank">';
           echo $row['filename'];
           echo '</a>';
+          $tutid=$row['id'];
+          if($this->session->userdata('admin')){
+             echo '<i class="trash icon link" title="Delete." style="float:right;" onclick="deleteshubh('.$tutid.');"></i>';
+          }
           echo "</div>";
         }
         ?>
@@ -119,4 +134,18 @@ if ( $this->session->userdata('admin'))
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="ui basic modal" id="tutorial">
+  <i class="massive trash icon" style="margin-left:200px;float:left;"></i>
+  <p style="font-family:cursive;margin-left:400px;">Do you want to delete this tutorial ?</p>
+  <br><br><br><br><br>
+  <form action='site/home_tab' method='post'>
+  <div class="ui buttons" style="margin-left:400px;float:left;">
+  <div class="ui positive button" id="yes" onClick="deletetut()">Yes</div>
+  <div class="or"></div>
+  <div class="ui button" id="no" onClick="hidemodel()">No</div>
+</div>
+</form>
 </div>

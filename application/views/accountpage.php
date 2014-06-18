@@ -52,11 +52,6 @@
                 {
                   document.getElementById("updatedb").submit();
                 }
-                function update(){
-                  $.post("'. base_url() . 'updateaccount.php", {username:"'. $this->session->userdata('username') .'", name: edit_account.name.value, email: edit_account.email.value, about_me: edit_account.about_me.value},function(output){
-                      $("#myDiv").html(output).show();
-                  });
-                }
 
 
                 </script>

@@ -9,7 +9,8 @@
 				'github' => $this->input->post('github'),
 				'members' => $this->input->post('members'),
 				'project_status' =>  $this->input->post('project_status'),
-				'filename' => $filename
+				'filename' => $filename,
+				'username' => $this->session->userdata('username')
 				);
 			$query=$this->db->insert('project',$data);
 			if($query){

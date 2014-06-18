@@ -5,19 +5,6 @@ $(document).ready(function () {
   $('.ui.checkbox').checkbox();
 
 });
-function dropdown_show (){
-	$('#dropdown').dropdown('show');
-};
-function dropdown_hide (){
-	$('#dropdown').dropdown('hide');
-};
-
-function dropdown1_show (){
-	$('#dropdown1').dropdown('show');
-};
-function dropdown1_hide (){
-	$('#dropdown1').dropdown('hide');
-};
 function login_modal(){
 	$("#login_username").val("");
 	$("#login_pass").val("");

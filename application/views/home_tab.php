@@ -62,11 +62,7 @@
                     </div>
                     
                     <div class="column">
-                        <a href="<?php echo base_url(); ?>site/blog" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/blog.jpg" class="rounded ui image"><p>Blog</p></a>
-                    </div>
-                    
-                    <div class="column">
-                        <a href="<?php echo base_url(); ?>site/forum" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/forum.jpg"class="rounded ui image"><p>Forum</p></a>
+                        <a href="<?php echo base_url(); ?>site" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/forum.jpg"class="rounded ui image"><p>Forum</p></a>
                     </div>
 
                     <div class="column">
@@ -87,9 +83,6 @@
                 <div class="row">
                     <div class="column">
                         <a href="<?php echo base_url(); ?>site/about" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/aboutus.jpg" class="rounded ui image"><p>About Us</p></a>
-                    </div>
-                    <div class="column">
-                        <a href="<?php echo base_url(); ?>site/team" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/team.jpg" class="rounded ui image"><p>Team</p></a>
                     </div>
                     <div class="column">
                         <a href="<?php echo base_url(); ?>site/tutorial" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img  src="<?php echo base_url(); ?>resources/images/tutorial.jpg" class="rounded ui image"><p>Tutorial</p></a>
