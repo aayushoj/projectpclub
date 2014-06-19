@@ -51,8 +51,8 @@ $active_record = TRUE;
 
 $db['forum']['hostname'] = "localhost";
 $db['forum']['username'] = "root";
-$db['forum']['password'] = "shubh";
-$db['forum']['database'] = "forum";
+$db['forum']['password'] = "";
+$db['forum']['database'] = "";
 $db['forum']['dbdriver'] = "mysql";
 $db['forum']['dbprefix'] = "";
 $db['forum']['pconnect'] = TRUE;
@@ -69,8 +69,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'shubh';
-$db['default']['database'] = 'pclub_data';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
