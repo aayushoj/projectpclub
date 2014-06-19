@@ -2,7 +2,7 @@
   $username=$_GET['username'];
 
 
-  $dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+  $dbc=mysqli_connect('localhost','root','','')
       or die('Error connecting to MYSQL server.');
   $query="SELECT * FROM users WHERE username = '".$username ."'";
   $result=mysqli_query($dbc,$query);
