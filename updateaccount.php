@@ -1,5 +1,5 @@
 <?php 
-	// $dbc=mysqli_connect('localhost','root','',')
+	// $dbc=mysqli_connect('localhost','root','shubh','pclub_data')
  //    	or die('Error connecting to MYSQL server.');
 
 
@@ -14,7 +14,7 @@
 	// else{
 	// 	echo "Username doesn't exist";
 	// }
-	$dbc=mysqli_connect('localhost','root','','')
+	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
     	or die('Error connecting to MYSQL server.');
 	$username=mysql_real_escape_string($_POST['username']);
 	$name=$_POST['name'];

@@ -23,6 +23,9 @@
 			if($rows){
 				echo "Email account already exist.";
 			}
+			else{
+				echo "available";
+			}
 		}
 		
 	}

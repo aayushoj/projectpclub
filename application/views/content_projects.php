@@ -152,7 +152,7 @@ echo 'Add PROJECT';echo'</a>';
 
 
     <div class="one wide column" style="margin:30px;">
-      <div class="ui small feed segment" style="background-color:#7FFFD4">
+      <div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;opacity:0.6;">
           <h4 class="ui header">Announcements</h4>
           <div class="event">
             <?php

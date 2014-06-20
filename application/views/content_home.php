@@ -49,12 +49,23 @@
 
     <div class="six wide column">
       <div style="padding:20px" >
+        <div style="opacity:0.6;padding:20px;background-color:#C0C0C0;border-radius:30px;" id="mainbody">
+          <p>
+          <b><u>Programming Club</u></b>, also known as <b><u>P-Club</u></b>, is one of the most important part of 
+            SnT council, IIT Kanpur. P-Club organizes regular lectures and competitions so 
+            as to encourage people towards programming. If you are interested in Programming, this is a right place to learn and
+            explore yourself. P-Club team is not just bounded by lectures and cpmpetions only. This club is much more.
+            P-Club team is always ready to help people. You can ask your doubts on our <a href="http://localhost/website_new/forum"> 
+            forum </a> and even post them on our <a href="https://www.facebook.com/groups/pclubiitk/">facebook group</a>
+            any time.You can learn various programming fundas with fun, really too much of fun. Join us and enjoy with P-Club.
+          </p>
+          </div>
       </div>
     </div>
 
 
     <div class="one wide column" style="margin:30px;">
-      <div class="ui small feed segment" style="background-color:#7FFFD4">
+      <div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;opacity:0.6;">
           <h4 class="ui header">Announcements</h4>
           <div class="event">
             <?php

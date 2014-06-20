@@ -1,46 +1,38 @@
+
 <?php
-  $username=$_GET['username'];
+
+$mode=$_POST['mode'];
+//echo '<script>console.log("'.$mode.'")</script>';
+$username=$_POST['username'];
+
+if($mode=='1')
+{
+
+$name=$_POST['name'];
+$email=$_POST['email'];
+$about_me=$_POST['about_me'];
+
+	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+          or die('Error connecting to MYSQL server.');
+        
+            $query='UPDATE users SET name = "'.$name.'" ,  email = "'.$email.'",about_me = "'.$about_me.'"  where username = "'.$username.'";';
+            $result=mysqli_query($dbc,$query);
+
+}
+elseif($mode=='2')
+{
+	$codchef=$_POST['codchef'];
+	$spoj=$_POST['spoj'];
+	$topcoder=$_POST['topcoder'];
+	$website=$_POST['website'];
 
 
-  $dbc=mysqli_connect('localhost','root','','')
-      or die('Error connecting to MYSQL server.');
-  $query="SELECT * FROM users WHERE username = '".$username ."'";
-  $result=mysqli_query($dbc,$query);
-  $put=mysqli_fetch_array($result);
+	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+          or die('Error connecting to MYSQL server.');
+        
+            $query='UPDATE users SET codchef = "'.$codchef.'" ,  spoj = "'.$spoj.'",topcoder = "'.$topcoder.'",website = "'.$website.'"   where username = "'.$username.'";';
+       		echo $query;
+            $result=mysqli_query($dbc,$query);
+}
 
-  //print_r($put);
-  echo'<script>
-        function update(){
-        $.post("'. base_url() . 'updateaccount.php", {username:"'. $this->session->userdata('username') .'", name: edit_account.name.value, email: edit_account.email.value, about_me: edit_account.about_me.value},function(output){
-            $("#myDiv").html(output).show();
-        });
-      }</script>
-  <form action ="../updatedb/'.$username;
-  echo '" id="updatedb" method="post" name="edit_account">
-  <div class="ui form segment">
-    
-      
-      <div class="field">
-        <label>Name</label>
-        <input name="name" value="'.$put['name'].'" type="text">
-      </div>
-      
-      <div class="field">
-        <label>EMAIL</label>
-        <input name="email" value="'.$put['email'].'" type="text">
-      </div>
-     
-      <div class="field">
-        <label>About Me</label>
-        <input name="about_me" value="'.$put['about_me'].'" type="text">
-      </div>
-     
-  </div>   
-
-  <div class="ui button" onClick="update();">
-        SAVE CHANGES
-  </div>
-  </form>';
 ?>
-
-

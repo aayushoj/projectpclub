@@ -36,13 +36,13 @@ class Site extends CI_Controller {
 		$this->load->view("footer.php");		
 	}
 
-	public function forum(){
-		$data['active']="0";
-		$data['title']='Forum';
-		$this->load->view("top_head.php",$data);
-		$this->load->view("content_forum.php");
-		$this->load->view("footer.php");		
-	}
+	// public function forum(){
+	// 	$data['active']="0";
+	// 	$data['title']='Forum';
+	// 	$this->load->view("top_head.php",$data);
+	// 	$this->load->view("content_forum.php");
+	// 	$this->load->view("footer.php");		
+	// }
 
 	public function about(){
 		$data['active']="4";
@@ -203,16 +203,20 @@ class Site extends CI_Controller {
 	public function add_event(){
 		$this->load->library("form_validation");
 		$this->form_validation->set_rules('name','Heading','required|trim');
-		$this->form_validation->set_rules('venue','Venue and timing','required|trim');
-		$this->form_validation->set_rules('date','Date','required|trim');
-		$this->form_validation->set_rules('time','Time','required|trim');
 		if($this->form_validation->run()){
-			$this->load->model('event');
-			if($this->event->add_event()){
-				$data['add_event']=true;
-			}
-			else{
-				$data['add_event']=false;
+			$this->form_validation->set_rules('venue','Venue and timing','required|trim');
+			if($this->form_validation->run()){
+				$this->form_validation->set_rules('date','Date','required|trim');
+				if($this->form_validation->run()){
+					$this->form_validation->set_rules('time','Time','required|trim');
+					$this->load->model('event');
+					if($this->event->add_event()){
+						$data['add_event']=true;
+					}
+					else{
+						$data['add_event']=false;
+					}
+				}
 			}
 		}
 		else{
@@ -248,25 +252,27 @@ class Site extends CI_Controller {
 
 		$this->load->library("form_validation");
 		$this->form_validation->set_rules('title','Title','required|trim');
-		$this->form_validation->set_rules('comment','Body','required|trim');
 		if($this->form_validation->run()){
-			if($_FILES['file']['tmp_name']){
-				$uploaddir = "C:/Setup/xampp/htdocs/website_new/file/";
-				$uploadfile = $uploaddir . basename($_FILES['file']['name']);
-				if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)){
+			$this->form_validation->set_rules('comment','Body','required|trim');
+			if($this->form_validation->run()){
+				if($_FILES['file']['tmp_name']){
+					$uploaddir = "C:/Setup/xampp/htdocs/website_new/file/";
+					$uploadfile = $uploaddir . basename($_FILES['file']['name']);
+					if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)){
+						$this->load->model("tutorial");
+						$this->tutorial->add_tutorial($_FILES['file']['name']);
+						$data['add_tutorial']=TRUE;
+					}
+					else
+					{
+						$data['add_tutorial']=FALSE;
+					}
+				}
+				else{
 					$this->load->model("tutorial");
-					$this->tutorial->add_tutorial($_FILES['file']['name']);
+					$this->tutorial->add_tutorial('');
 					$data['add_tutorial']=TRUE;
 				}
-				else
-				{
-					$data['add_tutorial']=FALSE;
-				}
-			}
-			else{
-				$this->load->model("tutorial");
-				$this->tutorial->add_tutorial('');
-				$data['add_tutorial']=TRUE;
 			}
 		}
 		else
@@ -281,13 +287,22 @@ class Site extends CI_Controller {
 		$this->load->view("footer.php");
 	}
 
+	// public function account ($username){
+	// 	$data['active']="10";
+	// 	$data['title']='account_info';
+	// 	$data['username']=$username;
+	// 	$this->load->view("top_head.php",$data);
+	// 	$this->load->view("accountpage.php",$data);
+	// 	$this->load->view("footer.php");
+	// }
 	public function account($username){
-		$data['active']="10";
-		$data['title']='account_info';
 		$data['username']=$username;
+		$data['active']="0";
+		$data['title']='Account';
 		$this->load->view("top_head.php",$data);
-		$this->load->view("accountpage.php",$data);
+		$this->load->view("account.php",$data);
 		$this->load->view("footer.php");
+		
 	}
 
 	public function updatedb($username)
@@ -367,6 +382,60 @@ class Site extends CI_Controller {
 		$this->load->view("top_head.php",$data);
 		$this->load->view("addpro.php");		
 		$this->load->view("footer.php");
+	}
+
+	public function password_validation(){
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules('password','Password','required|trim');
+		$this->form_validation->set_rules('cppassword','Confirm Password','required|trim|matches[password]');
+		if($this->form_validation->run()){
+			$this->db->where('username',$this->input->post('username'));
+			$data = array(
+				'password'=> md5($this->input->post('password')),
+			);
+			$this->db->update('users',$data);
+			$query=$this->db->get('users');
+			$row=$query->row();
+			$data = array(
+				'username' => $this->input->post('username'),
+				'is_logged_in' =>1,
+				'admin' =>	$row->admin
+				);
+			$this->session->set_userdata($data);
+		}
+
+		redirect('site/home');	
+	}
+
+	public function deletephoto($username){
+	unlink('C:/Setup/xampp/htdocs/website_new/file/image/'.$username);
+	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+          or die('Error connecting to MYSQL server.');
+        
+            $query='UPDATE users SET photo="default" where username = "'.$username.'";';
+            $result=mysqli_query($dbc,$query);
+			//$this->load->view("account.php",$data);
+			redirect('site/account/'.$username);
+	}
+
+	public function upload_Photo($username){
+
+		$uploaddir = "C:/Setup/xampp/htdocs/website_new/file/image";
+
+		$uploadfile = $uploaddir . basename($_FILES['file']['name']);
+		
+		move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
+				
+		rename($uploadfile,'C:/Setup/xampp/htdocs/website_new/file/image/'.$username );
+		$data['username']=$username;
+		$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+          or die('Error connecting to MYSQL server.');
+        
+            $query='UPDATE users SET photo="pic" where username = "'.$username.'";';
+            $result=mysqli_query($dbc,$query);
+			//$this->load->view("account.php",$data);
+			redirect('site/account/'.$username);
+		
 	}
 
 }

@@ -35,38 +35,78 @@ function submit_signup(){
     document.getElementById("signin_form").submit();
 }
 function username_check(){
-    $.post('../resources/script/checks/username_validate.php', {username: login.username.value},function(output){
+    $.post('../resources/script/checks/username_validate.php', {username: $('#login_username').val()},function(output){
             $('#username_check').html(output).show();
     });
 }
 function password_check(){
-    $.post('../resources/script/checks/password_validate.php', {username: login.username.value,password: login.password.value},function(output){
+    $.post('../resources/script/checks/password_validate.php', {username: $('#login_username').val(),password: $('#login_pass').val()},function(output){
             $('#password_check').html(output).show();
     });
 }
 
 function username_sign_check(){
-    $.post('../resources/script/checks/username_sign_validate.php', {username: signup_form.username.value},function(output){
+    $.post('../resources/script/checks/username_sign_validate.php', {username: $('#sign_username').val()},function(output){
             $('#username_sign_check').html(output).show();
     });
 }
 function email_sign_check(){
-    $.post('../resources/script/checks/email_sign_validate.php', {username: signup_form.username.value,email: signup_form.email.value},function(output){
+    $.post('../resources/script/checks/email_sign_validate.php', {username: $('#sign_username').val(),email: $('#sign_email').val()},function(output){
             $('#email_sign_check').html(output).show();
     });
 }
 function password_sign_check(){
-    $.post('../resources/script/checks/password_sign_validate.php', {username: signup_form.username.value,email: signup_form.email.value,password: signup_form.password.value,cppassword: signup_form.cppassword.value},function(output){
+    $.post('../resources/script/checks/password_sign_validate.php', {username: $('#sign_username').val(),email: $('#sign_email').val(),password: $('#sign_password').val(),cppassword: $('#sign_cppassword').val()},function(output){
             $('#password_sign_check').html(output).show();
     });
 }
 function password_len(){
-    $.post('../resources/script/checks/password_len.php', {username: signup_form.username.value,email: signup_form.email.value,password: signup_form.password.value},function(output){
+    $.post('../resources/script/checks/password_len.php', {username: $('#sign_username').val(),email: $('#sign_email').val(),password: $('#sign_password').val()},function(output){
             $('#password_sign_check').html(output).show();
     });
 }
 function password_cpp_check(){
-    $.post('../resources/script/checks/password_cpp_check.php', {username: signup_form.username.value,email: signup_form.email.value,password: signup_form.password.value,cppassword: signup_form.cppassword.value},function(output){
+    $.post('../resources/script/checks/password_cpp_check.php', {username: $('#sign_username').val(),email: $('#sign_email').val(),password: $('#sign_password').val(),cppassword: $('#sign_cppassword').val()},function(output){
             $('#password_sign_check').html(output).show();
     });
+}
+
+
+function forgot_modal(){
+    $("#forgot_username").val("");
+    $("#forgot_email").val("");
+    $("#forgot_sec_ans").val("");
+    //$("#sign_sec_que").val("Security Question");  
+    $('#forgot_sec_que').next().text("Security Question");
+    setTimeout(function(){$('#login_modal').modal('hide');},100);
+    $('#forgot_modal').modal('show');
+
+}
+
+function forgot_validate() {
+    $.post('../forgot_validate.php' , { username : $('#forgot_username').val() , security_ques : $('#forgot_sec_que').val() , security_ans : $('#forgot_sec_ans').val() },function(output){
+            $('#forgot_top').html(output).show();
+    });
+}
+
+function submit_password(){
+    document.getElementById("password_reset").submit();
+}
+
+function try_agan(){
+    setTimeout(function(){$('#forgot_modal').modal('hide');},100);
+    $("#forgot1_username").val("");
+    $("#forgot1_email").val("");
+    $("#forgot1_sec_ans").val("");
+    $('#forgot1_modal').modal('show');
+}
+
+function password_modal(){
+    $("#new_password").val("");
+    $("#new_cppassword").val("");
+    $('#password_modal').modal('show');
+
+}
+function submit_password_new(){
+    document.getElementById("password_reset_new").submit();
 }

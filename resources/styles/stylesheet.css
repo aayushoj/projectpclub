@@ -219,10 +219,29 @@
     font-size:20px;
     font-family:cursive;
     color:white;
+    text-transform: none;
 }
 
 #admin_menu div:hover{
     background-color:#C8C8C8 ;
+}
+
+
+.EDIT{
+    float:right;
+    color:blue;
+    cursor:pointer;
+}
+
+#forgot_button{
+    text-transform: none;
+    height:40px; 
+    width:80px;
+    background-color:green; 
+    border-radius:5px;
+    font-size:15px;
+    font-family:cursive;
+    color:white;
 }
 
 /*end*/

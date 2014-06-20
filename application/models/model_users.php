@@ -62,7 +62,14 @@
 					'security_ques'=>$row->security_ques,
 					'security_ans'=>$row->security_ans,
 					'admin'=>0,
-					'activated'=> 1
+					'activated'=> 1,
+					'photo' =>'id',
+					'about_me' => '',
+					'codechef' => '',
+					'spoj' => '',
+					'topcoder' => '',
+					'website' => '',
+					'name' => ''
 				);
 
 				$did_add_user = $this->db->insert('users',$data);
@@ -86,19 +93,6 @@
 			} else{
 				return false;
 			}
-		}
-
-
-		public function updatedb() {
-     		$data = array(
-               
-               'name' => $this->input->post('name'),
-               'email' =>$this->input->post('email'),
-               'about_me'=>$this->input->post('about_me'),
-            );
-			$this->db->update('users', $data);
-			
-				
 		}
 
 		public function rm_admin($user){
@@ -133,33 +127,6 @@
 			$this->db->update('users',$data);
 		}
 
-
-
-		public function updatepersonalRecord($newdata) {
-     		$data = array(
-               'name' => $newdata['name'],
-               'email' =>$newdata['email'],
-               'about_me'=>$newdata['about_me'],
-            );
-
-			$this->db->where('id', $newdata['id']);
-			$this->db->update('users', $data);
-		}
-
-
-		public function updateotheraccounts($newdata) {
-     		$data = array(
-               'codchef' => $newdata['codchef'],
-               'spoj' => $newdata['spoj'],
-               'topcoder' => $newdata['topcoder'],
-               'website'=>$newdata['website'],
-               
-            );
-
-			$this->db->where('id', $newdata['id']);
-			$this->db->update('users', $data);
-		}
-
 		public function updatepassword($input) {
      		$data = array(
                
@@ -175,6 +142,7 @@
 			 	$this->db->update('users', $data);
 			}
 		}
+
 
 
 	}

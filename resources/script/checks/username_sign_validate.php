@@ -9,9 +9,13 @@
 	if($username==''){
 		echo "Username is required";
 	}
+
 	else {
 		if($rows){
 			echo "Username already taken";
+		}
+		else{
+			echo "available";
 		}
 	}
 	

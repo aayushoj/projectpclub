@@ -1,19 +1,9 @@
-<?php
-if ( $this->session->userdata('admin'))
-{
-    $u=base_url();
-    echo"<div id='tutorial' style='margin-top:50px; margin-left:50px;'>";
-    echo'<a class="ui black button" href='.$u.'site/admin_panel_tutorial'.'>';
-    echo 'Add Tutorial';echo'</a>';
-    echo "</div>";
-}
-?>
 <script>
   var id;
   function deleteshubh(a)
    { 
       id=a;
-       $('.basic.modal').modal('show');
+       $('#tutorial').modal('show');
    }
   function deletetut(){
     $.post('../deltut.php',{ id :id} );
@@ -22,7 +12,7 @@ if ( $this->session->userdata('admin'))
   } 
   function hidemodel()
   {
-     $('.basic.modal').modal('hide');
+     $('#tutorial').modal('hide');
   }
 </script>
 
@@ -106,7 +96,7 @@ if ( $this->session->userdata('admin'))
 
 
     <div class="one wide column" style="margin:30px;">
-      <div class="ui small feed segment" style="background-color:#7FFFD4">
+      <div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;opacity:0.6;">
           <h4 class="ui header">Announcements</h4>
           <div class="event">
             <?php
