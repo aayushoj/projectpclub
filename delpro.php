@@ -1,6 +1,6 @@
 <?php
 $id=($_POST['id']);
-$con=mysqli_connect('localhost','root','shubh','pclub_data')
+$con=mysqli_connect('localhost','root','','pclub_data')
         or die('Error connecting to MYSQL server.');
   	$result=mysqli_query($con,"SELECT * FROM project WHERE `id` = '$id'");
 	$row=mysqli_fetch_array($result);
