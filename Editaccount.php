@@ -12,7 +12,7 @@ $name=$_POST['name'];
 $email=$_POST['email'];
 $about_me=$_POST['about_me'];
 
-	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+	$dbc=mysqli_connect('localhost','root','','pclub_data')
           or die('Error connecting to MYSQL server.');
         
             $query='UPDATE users SET name = "'.$name.'" ,  email = "'.$email.'",about_me = "'.$about_me.'"  where username = "'.$username.'";';
@@ -27,7 +27,7 @@ elseif($mode=='2')
 	$website=$_POST['website'];
 
 
-	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+	$dbc=mysqli_connect('localhost','root','','pclub_data')
           or die('Error connecting to MYSQL server.');
         
             $query='UPDATE users SET codchef = "'.$codchef.'" ,  spoj = "'.$spoj.'",topcoder = "'.$topcoder.'",website = "'.$website.'"   where username = "'.$username.'";';
