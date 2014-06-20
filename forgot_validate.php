@@ -4,7 +4,7 @@ $username=$_POST['username'];
 $security_ques=$_POST['security_ques'];
 $security_ans=$_POST['security_ans'];
 
-	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+	$dbc=mysqli_connect('localhost','root','','pclub_data')
           or die('Error connecting to MYSQL server.');
   $query="SELECT * FROM users WHERE username = '".$username ."'";
   $result=mysqli_query($dbc,$query);
