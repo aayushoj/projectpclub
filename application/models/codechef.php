@@ -134,24 +134,3 @@ class Codechef extends CI_Model{
 		}
 	}
 }
-		// $co=1;
-		// for($i=0;$i<2000;$i++){
-		// 	global $user;
-		// 	$t=$urlu.$user[$i];
-		// 	$insti=name($t);
-		// 	$ins='Indian Institute of Technology Kanpur ';
-		// 	if(strncmp($insti, $ins,37)== 0){
-		// 		echo $insti;
-		// 		$ra=top($t);
-		// 		echo $user[$i].' country rank ='.$ra[1]."<br>";
-		// 		$data = array(
-		// 				'username'=>$user[$i],
-		// 				'rank'=>$ra[1]
-		// 			);
-		// 		$this->db->where('id',$co);
-		// 		$this->db->update('codechef_top_rankers',$data);
-		// 		++$co;
-		// 	}
-		// 	if($co==11)
-		// 		break;
-		// }

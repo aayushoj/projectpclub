@@ -316,7 +316,7 @@ class Site extends CI_Controller {
 	public function update_codechef_database(){
 		$this->load->model("codechef");
 		$this->codechef->get_rank();
-		redirect('site/admin_panel');
+		redirect('site/home');
 	}
 
 	public function rm_admin($user){

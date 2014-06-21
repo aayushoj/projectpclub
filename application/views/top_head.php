@@ -168,18 +168,11 @@
               <input type="button" onfocus="password_check();" onClick="submit_login()" id="login_button" value="Login" >
               <input type="submit" onClick="submit_login()" style="display:none;" >
               <p style="margin-top:20px;color:red;" onclick="forgot_modal();">Forgot Password </p>
-              <div class="ui horizontal divider" style="margin-top:7em;color:red">
-              Or</div>
-              <p style="text-align:center"><ins  style="color:blue">Or Connect with</ins></p>
-              <div class="ui google plus button" style="margin-top:0.5em; margin-left:4em;">
-                <i class="google plus icon"></i>
-                Google Plus
-              </div>
             </div>
           </form>
         </div>
   
-        <div class="column" style="height:490px; width:300px;">
+        <div class="column" style="height:280px; width:300px;">
           <div style="margin:40px 0px 24px 10px; height:40px;align:center;color:red;font-size:20px;">
               <p id="username_check"> </p>
           </div>
@@ -263,20 +256,12 @@
                 
                 <input type="submit" onClick="submit_signup()" style="display:none;" >
                 <input type="button" onClick="submit_signup()" id="signup_button" value="Signup">
-                <div class="ui horizontal divider" style="margin-top:1em; color:red;">
-                Or
-              </div>
-              <p style="text-align:center"><ins style="color:blue;">Or Connect with</ins></p>
-                <div class="ui google plus button" style="margin-top:0.5em; margin-left:4em;">
-                  <i class="google plus icon"></i>
-                  Google Plus
-                </div>
               </div>
             </form>
           </div>
           
-          <div class="column" style="height:580px; width:400px;padding-top:15px; ">
-              <div style="margin:5px 10px 18px 10px; height:28px;align:center;color:red;font-size:20px;padding:5px;">
+          <div class="column" style="height:430px; width:400px;padding-top:0px;">
+              <div style="margin:0px 10px 18px 10px; height:28px;align:center;color:red;font-size:20px;padding:5px;">
                   <p id="username_sign_check" style="margin:10px;margin-bottom:20px;"></p>
               </div>
               <div style="margin:10px 10px 24px 10px; height:28px;align:center;color:red;font-size:20px;padding:5px;">

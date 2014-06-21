@@ -269,7 +269,7 @@ if($put){
     
       echo '</div></div></div>';
       if($this->session->userdata('username')==$put['username'] && $this->session->userdata('is_logged_in')){
-        echo'<div class="ui green submit button" style="float:left;margin-left:50px;text-transform:none;"onclick="password_modal();"> Change your Password</div><br><br><br>';
+        echo'<div class="ui green submit button" style="float:left;margin-left:50px;text-transform:none;"onclick="old_password_modal();"> Change your Password</div><br><br><br>';
         echo'<div class="ui green submit button" style="float:left;margin-left:50px;text-transform:none;margin-bottom:50px;"onclick="deact_show();"> Deactivate your Account</div>';
       }
     }else{
@@ -326,45 +326,24 @@ echo '<div class="ui basic modal" id="deact">
           </div>
   </div>
 
-  <div class="ui center aligned small modal" id="password_modal" style="width:400px;">
-    <div class="ui teal inverted form segment">
-      <form id="password_reset_new" method="post" action="<?php echo base_url();?>site/password_validation">
-        <input type="hidden" name="username" value="<?php echo $this->session->userdata('username'); ?>" >
-        <div class="field">
-          <div class="ui left labeled icon input">
-            <input type="password" name="password" placeholder="New Password" id="new_passord">
-            <i class="lock icon"></i>
-            <div class="ui corner label">
-              <i class="asterisk icon"></i>
-            </div>
-          </div>
-        </div>
 
-        <div class="field">
-          <div class="ui left labeled icon input">
-            <input type="password" name="cppassword" placeholder="Confirm Password" id="new_cppassord">
-            <i class="lock icon"></i>
-            <div class="ui corner label">
-              <i class="asterisk icon"></i>
+
+<div class="ui center aligned small modal" id="old_password_modal" style="width:400px;">
+  <div class="ui teal inverted form segment">
+      <div id="password_top">
+        <form id="password_reset_new" method="post" action="<?php echo base_url();?>site/password_validation">
+          <input type="hidden" name="username" value="<?php echo $this->session->userdata('username'); ?>" id="username1">
+          <div class="field">
+            <div class="ui left labeled icon input">
+              <input type="password" name="old_password" placeholder="Old Password" id="old_password">
+              <i class="lock icon"></i>
+              <div class="ui corner label">
+                <i class="asterisk icon"></i>
+              </div>
             </div>
           </div>
-        </div>
-        <input type="button" onClick="submit_password_new();" id="forgot_button" value="Continue">
-      </form>
-      <div class="ui horizontal divider" style="margin-top:4em;color:red">
-      Or</div>
-      <p> Send reset link to your email Id </p>
-      <form id="signin_form" action="<?php echo base_url(); ?>site/" method="post" name="forgot_form">
-        <div class="field"  >
-          <div class="ui left labeled icon input"  >
-            <input type="text" name="email" placeholder="Email-id" id="forgot_email">
-            <i class="user icon"></i>
-            <div class="ui corner label">
-              <i class="asterisk icon"></i>
-            </div>
-          </div>
-        </div>
-        <input type="button" onClick="send_email_forgot()" id="forgot_button" value="Continue">
-      </form>
+          <input type="button" onClick="old_pass_check();" id="forgot_button" value="Continue">
+        </form>
+      </div>
     </div>
-  </div>
+</div>

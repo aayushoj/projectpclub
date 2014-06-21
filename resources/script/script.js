@@ -94,11 +94,17 @@ function submit_password(){
 }
 
 function try_agan(){
-    setTimeout(function(){$('#forgot_modal').modal('hide');},100);
-    $("#forgot1_username").val("");
-    $("#forgot1_email").val("");
-    $("#forgot1_sec_ans").val("");
-    $('#forgot1_modal').modal('show');
+    window.open("http://localhost/website_new/site/home","_self");
+    $("#forgot_username").val("");
+    $("#forgot_email").val("");
+    $("#forgot_sec_ans").val("");
+    $('#forgot_sec_que').next().text("Security Question");
+    setTimeout(function(){$('#forgot_modal').modal('show');},1000);
+    // setTimeout(function(){$('#forgot_modal').modal('hide');},100);
+    // $("#forgot1_username").val("");
+    // $("#forgot1_email").val("");
+    // $("#forgot1_sec_ans").val("");
+    // $('#forgot1_modal').modal('show');
 }
 
 function password_modal(){
@@ -109,4 +115,24 @@ function password_modal(){
 }
 function submit_password_new(){
     document.getElementById("password_reset_new").submit();
+}
+
+
+function old_pass_check() {
+    $.post('../../old_pass_check.php' , {username : $('#username1').val() , old_password : $('#old_password').val() },function(output){
+            $('#password_top').html(output).show();
+    });
+}
+function old_password_modal(){
+    $("#old_password").val("");
+    $('#old_password_modal').modal('show');
+
+}
+function try_agan1(){
+//     setTimeout(function(){$('#old_password_modal').modal('hide');},100);
+//     $("#old_password").val("");
+//     $('#old_password_modal1').modal('show');
+    window.open("http://localhost/website_new/site/home","_self");
+    $("#old_password").val("");
+    setTimeout(function(){$('#old_password_modal1').modal('show');},1000);
 }
