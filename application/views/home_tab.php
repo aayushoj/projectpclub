@@ -52,21 +52,21 @@
 </head>
 
 
-<body background="<?php echo base_url(); ?>resources/images/bg.jpg"  bgproperties="fixed">
+<body background="<?php echo base_url(); ?>resources/images/background.jpg"  bgproperties="fixed">
 <div class="main_page">
         <div class="first_row">
             <div class="ui four column divided grid" style="border:0px;">
                 <div class="row">
                     <div class="column">
-                        <a href="http://pclub.in/onj" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/onlinejudge.jpg" class="rounded ui image"><p>Online judge</p></a>
+                        <a href="http://pclub.in/onj" style="text-decoration:none; color:black; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/onlinejudge.jpg" class="rounded ui image"><p>Online judge</p></a>
                     </div>
                     
                     <div class="column">
-                        <a href="<?php echo base_url(); ?>site" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/forum.jpg"class="rounded ui image"><p>Forum</p></a>
+                        <a href="<?php echo base_url(); ?>site" style="text-decoration:none; color:black; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/forum.jpg"class="rounded ui image"><p>Forum</p></a>
                     </div>
 
                     <div class="column">
-                        <a href="<?php echo base_url(); ?>site/projects" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/project.jpg" class="rounded ui image"><p>Project</p></a>
+                        <a href="<?php echo base_url(); ?>site/projects" style="text-decoration:none; color:black; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/project.jpg" class="rounded ui image"><p>Project</p></a>
                     </div>
                 </div>
             </div>
@@ -82,13 +82,13 @@
             <div class="ui four column divided grid">
                 <div class="row">
                     <div class="column">
-                        <a href="<?php echo base_url(); ?>site/about" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/aboutus.jpg" class="rounded ui image"><p>About Us</p></a>
+                        <a href="<?php echo base_url(); ?>site/about" style="text-decoration:none; color:black; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/aboutus.jpg" class="rounded ui image"><p>About Us</p></a>
                     </div>
                     <div class="column">
-                        <a href="<?php echo base_url(); ?>site/tutorial" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img  src="<?php echo base_url(); ?>resources/images/tutorial.jpg" class="rounded ui image"><p>Tutorial</p></a>
+                        <a href="<?php echo base_url(); ?>site/tutorial" style="text-decoration:none; color:black; text-align:center; font-size:20px;"><img  src="<?php echo base_url(); ?>resources/images/tutorial.jpg" class="rounded ui image"><p>Tutorial</p></a>
                     </div>
                     <div class="column">
-                        <a href="<?php echo base_url(); ?>site/calender" style="text-decoration:none; color:white; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/calendar.jpg" class="rounded ui image"><p>Calender</p></a>
+                        <a href="<?php echo base_url(); ?>site/calender" style="text-decoration:none; color:black; text-align:center; font-size:20px;"><img src="<?php echo base_url(); ?>resources/images/calendar.jpg" class="rounded ui image"><p>Calender</p></a>
                     </div>
                 </div>
             </div>

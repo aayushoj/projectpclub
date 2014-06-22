@@ -110,7 +110,6 @@ class Site extends CI_Controller {
 		$this->load->library("form_validation");
 		$this->form_validation->set_rules('username','Username','required|trim|is_unique[users.username]');
 		$this->form_validation->set_message("is_unique","That email address already exists.");
-
 		if($this->form_validation->run()){
 			$this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[users.email]');
 			if($this->form_validation->run()){
@@ -225,7 +224,7 @@ class Site extends CI_Controller {
 		$data['active']="7";
 		$data['title']='Admin';
 		$this->load->view("top_head.php",$data);
-		$this->load->view("content_admin.php");
+		$this->load->view("content_admin_eve.php");
 		$this->load->view("footer.php");
 
 
@@ -299,7 +298,6 @@ class Site extends CI_Controller {
 		$data['username']=$username;
 		$data['active']="0";
 		$data['title']='Account';
-		$this->load->view("top_head.php",$data);
 		$this->load->view("account.php",$data);
 		$this->load->view("footer.php");
 		

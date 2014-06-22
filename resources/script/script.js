@@ -32,7 +32,7 @@ function submit_login(){
 }
 
 function submit_signup(){
-    document.getElementById("signin_form").submit();
+    document.getElementById("signup_form").submit();
 }
 function username_check(){
     $.post('../resources/script/checks/username_validate.php', {username: $('#login_username').val()},function(output){

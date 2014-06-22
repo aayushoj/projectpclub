@@ -63,7 +63,7 @@
 					'security_ans'=>$row->security_ans,
 					'admin'=>0,
 					'activated'=> 1,
-					'photo' =>'id',
+					'photo' =>'default',
 					'about_me' => '',
 					'codechef' => '',
 					'spoj' => '',

@@ -7,6 +7,9 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/tinymce.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>resources/packaged/javascript/semantic.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>resources/script/script.js"></script>
+    <link href="<?php echo base_url(); ?>resources/themes/1/js-image-slider.css" rel="stylesheet" type="text/css" />
+    <script src="<?php echo base_url(); ?>resources/themes/1/js-image-slider.js" type="text/javascript"></script>
+<!--     <link href="../generic.css" rel="stylesheet" type="text/css" /> -->
     <script type="text/javascript">
 
 
@@ -29,7 +32,7 @@
         <?php echo $title; ?>
     </title>
 </head>
-<body background="<?php echo base_url(); ?>resources/images/seamless-white-texture.jpg"  bgproperties="fixed" style="margin:0px;">
+<body background="<?php echo base_url(); ?>resources/images/background.jpg"  bgproperties="fixed" style="margin:0px;">
     <div style="background-color:#383838 ;height:40px;margin:0px;width:100%;top:0px; " class="ui fixed transparent inverted main menu">
         <nav class="menu_ex" style="margin-left:100px;display:block;">
             <a  href="<?php echo base_url(); ?>site/home"><div class="<?php if($active=='1') echo"active";?>" style="color:white;"><i class="home icon"></i> Home</div></a>
@@ -112,18 +115,29 @@
     </div>-->
 
 
-    <div style="margin:8px;margin-top:60px;position:relative;">
+    <div style="margin:8px;margin-top:60px;position:relative;margin-bottom:60px;">
 
       <div class="ui divided grid" style="height:150px;">
-        <!--<div class="row">
-        <div class="one wide column"> -->
-        <!-- <a href="site/home"><img src="<?php echo base_url(); ?>resources/images/logo.png"></a> -->
-        <canvas id="myCanvas" style='height:200px;width:400px;'></canvas>
-        <script type="text/javascript" src="<?php echo base_url(); ?>/resources/script/alphabet.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>/resources/script/bubbles.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>/resources/script/main.js"></script>
-        <!-- </div> -->
-        <!--<div class="eight wide column" ></div> -->
+        <div class="row">
+          <div class="column">
+          <!-- <a href="site/home"><img src="<?php echo base_url(); ?>resources/images/logo.png"></a> -->
+          <canvas id="myCanvas" style='height:200px;width:400px;'></canvas>
+          <script type="text/javascript" src="<?php echo base_url(); ?>/resources/script/alphabet.js"></script>
+          <script type="text/javascript" src="<?php echo base_url(); ?>/resources/script/bubbles.js"></script>
+          <script type="text/javascript" src="<?php echo base_url(); ?>/resources/script/main.js"></script>
+          </div>
+          <div class="column">
+            <div id="sliderFrame">
+              <div id="slider">
+              <img src="<?php echo base_url(); ?>resources/images/linux.jpg" alt="COMPETITIVE PROGRAMMING" >
+              <img src="<?php echo base_url(); ?>resources/images/android2.jpg" alt="ANDROID PROGRAMMING" >
+              <img src="<?php echo base_url(); ?>resources/images/windows.jpg" alt="WINDOWS APP DEV">
+              <img src="<?php echo base_url(); ?>resources/images/gp.jpg" alt="GAME DEVELOPMENT">
+              <img src="<?php echo base_url(); ?>resources/images/hacking.jpg" alt="HACKING">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       
@@ -190,9 +204,9 @@
       <div class="ui small modal" id="signup_modal">
         <div class="ui two column middle aligned relaxed grid basic segment">
           <div class="column" >
-            <form id="signin_form" action="<?php echo base_url(); ?>site/signup_validation" method="post" name="signup_form"> 
+            <form id="signup_form" action="<?php echo base_url(); ?>site/signup_validation" method="post" name="signup_form"> 
               <div class="ui teal inverted form segment" >
-                <div class="field"  >
+                <div class="field">
                   <div class="ui left labeled icon input" style="margin:20px 0px px 0px">
                     <input type="text" name="username" placeholder="Username" id="sign_username">
                     <i class="user icon"></i>
@@ -279,7 +293,7 @@
 
 
 
-    <div class="ui center aligned small modal" id="forgot_modal" style="width:400px;">
+    <div class="ui small modal" id="forgot_modal" style="width:400px;">
       <div class="ui teal inverted form segment">
         <div id="forgot_top">
           <form id="forgot_form" method="post" name="forgot_form"> 

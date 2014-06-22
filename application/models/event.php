@@ -4,7 +4,7 @@
 			$data = array(
 				'name' => $this->input->post('name'),
 				'venue' => $this->input->post('venue'),
-				'about' => ($this->input->post('about')),
+				'about' => ($this->input->post('comment')),
 				'date' => ($this->input->post('date')),
 				'time' => ($this->input->post('time')),
 

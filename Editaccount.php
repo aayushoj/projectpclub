@@ -21,7 +21,7 @@ $about_me=$_POST['about_me'];
 }
 elseif($mode=='2')
 {
-	$codchef=$_POST['codchef'];
+	$codechef=$_POST['codechef'];
 	$spoj=$_POST['spoj'];
 	$topcoder=$_POST['topcoder'];
 	$website=$_POST['website'];
@@ -30,7 +30,7 @@ elseif($mode=='2')
 	$dbc=mysqli_connect('localhost','root','shubh','pclub_data')
           or die('Error connecting to MYSQL server.');
         
-            $query='UPDATE users SET codchef = "'.$codchef.'" ,  spoj = "'.$spoj.'",topcoder = "'.$topcoder.'",website = "'.$website.'"   where username = "'.$username.'";';
+            $query='UPDATE users SET codechef = "'.$codechef.'" ,  spoj = "'.$spoj.'",topcoder = "'.$topcoder.'",website = "'.$website.'"   where username = "'.$username.'";';
        		echo $query;
             $result=mysqli_query($dbc,$query);
 }

@@ -96,30 +96,32 @@
 
 
     <div class="one wide column" style="margin:30px;">
-      <div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;opacity:0.6;">
-          <h4 class="ui header">Announcements</h4>
-          <div class="event">
-            <?php
-              $dbc=mysqli_connect('localhost','root','shubh','pclub_data')
-                or die('Error connecting to MYSQL server.');
-              $query=" SELECT * FROM events ORDER BY `date` DESC";
-              $query1="SELECT CURDATE()";
-              $result1=mysqli_query($dbc,$query1);
-              $result=mysqli_query($dbc,$query);
-              $row=mysqli_fetch_array($result1);
-              $date =  $row["CURDATE()"];
-              while($row=mysqli_fetch_array($result)){
-                if($row['date']>= $date){
-                  echo"<h4 style='font-family:cursive;'>" . $row['name'] . "</h4>";
-                  echo "<p>" . $row['venue'] ." ". $row['date'] . " " . $row['time'] . "</p>";
-                  echo $row['about'];
-                  echo"<br>";
+      <div style= "padding:20px;">
+        <div class="ui small feed segment" style="background-color:#7FFFD4 height:100px;opacity:0.6;">
+            <h4 class="ui header">Announcements</h4>
+            <div class="event">
+              <?php
+                $dbc=mysqli_connect('localhost','root','shubh','pclub_data')
+                  or die('Error connecting to MYSQL server.');
+                $query=" SELECT * FROM events ORDER BY `date` DESC";
+                $query1="SELECT CURDATE()";
+                $result1=mysqli_query($dbc,$query1);
+                $result=mysqli_query($dbc,$query);
+                $row=mysqli_fetch_array($result1);
+                $date =  $row["CURDATE()"];
+                while($row=mysqli_fetch_array($result)){
+                  if($row['date']>= $date){
+                    echo"<h4 style='font-family:cursive;'>" . $row['name'] . "</h4>";
+                    echo "<p>" . $row['venue'] ." ". $row['date'] . " " . $row['time'] . "</p>";
+                    echo $row['about'];
+                    echo"<br>";
+                  }
+                  else{
+                    break;
+                  }
                 }
-                else{
-                  break;
-                }
-              }
-            ?>
+              ?>
+          </div>
         </div>
       </div>
     </div>
