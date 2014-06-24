@@ -298,6 +298,7 @@ class Site extends CI_Controller {
 		$data['username']=$username;
 		$data['active']="0";
 		$data['title']='Account';
+		$this->load->view("top_head1.php",$data);
 		$this->load->view("account.php",$data);
 		$this->load->view("footer.php");
 		

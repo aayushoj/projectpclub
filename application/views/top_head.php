@@ -141,18 +141,18 @@
       </div>
 
       
-        <?php 
+        
+      
+    </div>
+
+
+      <?php 
         if(validation_errors()){
           echo "<div style='width:1000px;background-color:#CC6699; margin:20px 100px;text-align:center;border-radius:10px;font-size:17px;font-family:cursive;color:white;height:35px;'>";
           echo validation_errors();
           echo '</div>';
         }
        ?>
-      
-    </div>
-
-
-
 
 
 

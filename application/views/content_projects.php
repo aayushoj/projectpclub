@@ -78,7 +78,7 @@ echo 'Add PROJECT';echo'</a>';
 
 
     <div class="six wide column">
-      <div style="padding:20px" >
+      <div style="padding:20px;" >
         <?php 
         $dba=mysqli_connect('localhost','root','shubh','pclub_data')
         or die('Error connecting to MYSQL server.');
@@ -87,19 +87,19 @@ echo 'Add PROJECT';echo'</a>';
         
   
         while($row=mysqli_fetch_array($result)){
-          echo '<div class="ui message" style="padding:30px;">';
-        echo  '<div class="header">';
+          echo '<div class="ui message" style="padding:30px;opacity:0.8;background-color:#C8C8C8;" id="project">';
+        echo  '<div class="header" style="color:#000000;">';
         echo  $row['title'] ;
         echo '</div>';
 
         echo '<br>';
-        echo '<div style="margin:10px;">';
+        echo '<div style="margin:10px;color:#000000;">';
         echo '<b>Description:</b>';
         echo  $row['description'];
               echo '</div>';
         if($row['wiki']!='')
         {
-          echo '<div style="margin:10px;">';
+          echo '<div style="margin:10px;color:#000000;">';
           echo '<b>Wiki Link:</b>';
           echo '<a href='.$row['wiki'].'>';
           echo $row['wiki'];
@@ -109,7 +109,7 @@ echo 'Add PROJECT';echo'</a>';
       }
       if($row['github']!='')
       {
-        echo '<div style="margin:10px;">';
+        echo '<div style="margin:10px;color:#000000;">';
         echo '<b>Github Link:</b>';
         echo '<a href='.$row['github'].'>';
           echo $row['github'];
@@ -118,14 +118,14 @@ echo 'Add PROJECT';echo'</a>';
                 echo '</div>';
       }
       if($row['project_status']!=''){
-        echo '<div style="margin:10px;">';
+        echo '<div style="margin:10px;color:#000000;">';
         echo '<b>Project Status:</b>';
           echo $row['project_status'];
           echo "<br>";
                 echo '</div>';
       }
 
-        echo '<div style="margin:10px;">';
+        echo '<div style="margin:10px;color:#000000;">';
         echo '<b>Documentation:</b>';
         $base= base_url()."project/";
         echo '<a href='.$base.$row['filename'].'>';
@@ -134,7 +134,7 @@ echo 'Add PROJECT';echo'</a>';
         echo "<br>";
         echo '</div>';
         if($row['members']!=''){
-          echo '<div style="margin:10px;">';
+          echo '<div style="margin:10px;color:#000000;">';
           echo '<b>Members:</b>';
             echo $row['members'];
             echo "<br>";

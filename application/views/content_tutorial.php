@@ -74,14 +74,14 @@
         $query="SELECT * FROM tutorial ORDER BY `id` DESC";
         $result=mysqli_query($dba,$query);
         while($row=mysqli_fetch_array($result)){
-          echo "<div class='ui red message'>";
-          echo "<div class='header'>";
+          echo "<div class='ui message'style='background-color:#C8C8C8;opacity:0.8;'>";
+          echo "<div class='header' style='color:#000000'>";
           echo $row['title'];
           echo "</div>";
-          echo "<p>" . $row['body'] . "</p>";
+          echo "<p style='color:#080808 '>" . $row['body'] . "</p>";
           $base= base_url()."file/";
          // echo $base.$row['filename'];
-          echo '<a href="'.base_url().'file/'.rawurlencode($row['filename']).'" target="_blank">';
+          echo '<a href="'.base_url().'file/'.rawurlencode($row['filename']).'" target="_blank" style="color:#B22222;text-decoration:none;">';
           echo $row['filename'];
           echo '</a>';
           $tutid=$row['id'];
